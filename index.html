@@ -389,6 +389,15 @@
 
         document.getElementById('filters-form').addEventListener('submit', event => {
             event.preventDefault();
+            const yearFromElem = document.getElementById('year-from');
+            const yearToElem = document.getElementById('year-to');
+            const from = parseInt(yearFromElem.value, 10);
+            const to = parseInt(yearToElem.value, 10);
+
+            if (!isNaN(from) && !isNaN(to) && from > to) {
+                alert('The "From" year must be less than or equal to the "To" year.');
+                return;
+            }
             renderQuestions();
         });
 
