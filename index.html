@@ -408,7 +408,47 @@
             renderQuestions();
         });
 
+        // Add this function after DataManager class
+        async function checkForDataUpdate() {
+            try {
+                // Fetch latest data.json
+                const response = await fetch('data.json', { cache: 'no-store' });
+                const latestData = await response.json();
+
+                // Open IndexedDB and get cached data
+                const dbRequest = indexedDB.open(DB_NAME, DB_VERSION);
+                dbRequest.onsuccess = function () {
+                    const db = dbRequest.result;
+                    const transaction = db.transaction([STORE_NAME], 'readonly');
+                    const store = transaction.objectStore(STORE_NAME);
+                    const getRequest = store.get('data');
+                    getRequest.onsuccess = function () {
+                        const cachedData = getRequest.result;
+                        // Compare stringified data for changes
+                        if (JSON.stringify(cachedData) !== JSON.stringify(latestData)) {
+                            if (confirm('New question data is available. Reload to update?')) {
+                                // Save new data and reload
+                                const writeTx = db.transaction([STORE_NAME], 'readwrite');
+                                const writeStore = writeTx.objectStore(STORE_NAME);
+                                writeStore.put(latestData, 'data');
+                                writeTx.oncomplete = function () {
+                                    location.reload();
+                                };
+                            }
+                        }
+                    };
+                };
+            } catch (e) {
+                // Ignore errors silently
+            }
+        }
+
         fetchData();
+
+        // Check for data update in background after page loads
+        window.addEventListener('DOMContentLoaded', () => {
+            setTimeout(checkForDataUpdate, 1000);
+        });
     </script>
 </body>
 
