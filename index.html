@@ -7,117 +7,344 @@
     <title>DNB Surgery Question Bank</title>
     <style>
         :root {
-            --primary: #2c3e50;
-            --bg: #f5f5f5;
-            --border: #ddd;
+            color-scheme: dark;
+            --bg: #0f1010;
+            --surface: #181a1a;
+            --surface-soft: #202323;
+            --surface-raised: #252827;
+            --border: #343938;
+            --border-strong: #4a514f;
+            --text: #f3f0e8;
+            --muted: #aaa49a;
+            --primary: #7dd3b0;
+            --primary-strong: #42b883;
+            --accent: #f2c36b;
+            --danger: #f48f8f;
+            --shadow: 0 20px 60px rgba(0, 0, 0, 0.38);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            background: var(--bg);
         }
 
         body {
             font-family: system-ui, -apple-system, sans-serif;
             margin: 0;
-            padding: 10px;
-            background: var(--bg);
-            font-size: 14px;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            background: white;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-        }
-
-        h1 {
-            color: var(--primary);
-            text-align: center;
-            margin: 0 0 20px;
-            font-size: 1.5rem;
-        }
-
-        .filters {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 15px;
-        }
-
-        .year-range {
-            display: flex;
-            gap: 8px;
-            flex: 2;
-            min-width: 0;
-        }
-
-        select {
-            padding: 6px;
-            border: 1px solid var(--border);
-            border-radius: 4px;
-            font-size: 14px;
-            flex: 1;
+            min-height: 100vh;
+            background:
+                linear-gradient(160deg, rgba(125, 211, 176, 0.08), transparent 34%),
+                linear-gradient(20deg, rgba(242, 195, 107, 0.06), transparent 36%),
+                var(--bg);
+            color: var(--text);
+            font-size: 15px;
+            line-height: 1.5;
+            text-rendering: optimizeLegibility;
         }
 
         button,
-        #remove {
-            padding: 6px 15px;
-            background: var(--primary);
-            color: white;
-            border: none;
-            border-radius: 4px;
+        input,
+        select {
+            font: inherit;
+        }
+
+        button {
             cursor: pointer;
-            font-size: 14px;
+        }
+
+        a,
+        button {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .app-shell {
+            width: min(100%, 1180px);
+            margin: 0 auto;
+            padding: 12px;
+        }
+
+        .study-panel {
+            min-height: calc(100vh - 24px);
+            background: rgba(24, 26, 26, 0.92);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .app-header {
+            display: grid;
+            gap: 16px;
+            padding: 20px 16px 16px;
+            border-bottom: 1px solid var(--border);
+            background: rgba(32, 35, 35, 0.5);
+        }
+
+        .eyebrow {
+            margin: 0 0 2px;
+            color: var(--primary);
+            font-size: 0.82rem;
+            font-weight: 700;
+        }
+
+        h1 {
+            margin: 0;
+            color: var(--text);
+            font-size: 1.75rem;
+            line-height: 1.12;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 8px;
+        }
+
+        .stat {
+            min-height: 68px;
+            padding: 10px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            background: var(--surface-soft);
+        }
+
+        .stat strong,
+        .stat span {
+            display: block;
+        }
+
+        .stat strong {
+            color: var(--text);
+            font-size: 1rem;
+            line-height: 1.1;
+            white-space: nowrap;
+        }
+
+        .stat span {
+            margin-top: 4px;
+            color: var(--muted);
+            font-size: 0.78rem;
+        }
+
+        .filters {
+            display: grid;
+            gap: 10px;
+            padding: 14px 16px;
+            border-bottom: 1px solid var(--border);
+            background: rgba(15, 16, 16, 0.36);
+        }
+
+        .year-range {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 8px;
+        }
+
+        .field {
+            display: grid;
+            gap: 6px;
+            min-width: 0;
+        }
+
+        .field span {
+            color: var(--muted);
+            font-size: 0.8rem;
+            font-weight: 650;
+        }
+
+        select,
+        input {
+            width: 100%;
+            min-height: 46px;
+            padding: 10px 12px;
+            color: var(--text);
+            background: #101212;
+            border: 1px solid var(--border-strong);
+            border-radius: 8px;
+            outline: none;
+        }
+
+        select:focus,
+        input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(125, 211, 176, 0.16);
+        }
+
+        input::placeholder {
+            color: #77726d;
+        }
+
+        .actions {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 8px;
+        }
+
+        .action-button {
+            min-height: 46px;
+            padding: 10px 12px;
+            color: #07110d;
+            background: var(--primary);
+            border: 1px solid transparent;
+            border-radius: 8px;
+            font-weight: 750;
             text-align: center;
+        }
+
+        .action-button:hover,
+        .action-button:focus-visible {
+            background: var(--primary-strong);
+        }
+
+        .action-button.secondary {
+            color: var(--text);
+            background: transparent;
+            border-color: var(--border-strong);
+        }
+
+        .action-button.secondary:hover,
+        .action-button.secondary:focus-visible {
+            background: var(--surface-raised);
+        }
+
+        .results-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        #result-summary {
+            margin: 0;
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        #questions-cards {
+            display: grid;
+            gap: 10px;
+            padding: 12px;
+        }
+
+        .question-card {
+            display: grid;
+            gap: 12px;
+            padding: 14px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            background: var(--surface-soft);
+        }
+
+        .question-card:hover {
+            border-color: var(--border-strong);
+            background: var(--surface-raised);
+        }
+
+        .question-text {
+            margin: 0;
+            color: var(--text);
+            font-size: 1rem;
+            font-weight: 720;
+            overflow-wrap: anywhere;
+        }
+
+        .meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .pill,
+        .table-link {
+            max-width: 100%;
+            color: var(--text);
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border);
+            border-radius: 999px;
             text-decoration: none;
+            overflow-wrap: anywhere;
+            white-space: normal;
         }
 
-        @media (min-width: 500px) {
-            body {
-                font-size: 16px;
-            }
-
-            .question-card {
-                display: none;
-            }
-
-            .desktop-table {
-                display: table;
-            }
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            min-height: 32px;
+            padding: 6px 10px;
+            font-size: 0.84rem;
         }
 
-        @media (max-width: 499px) {
-            .filters {
-                flex-direction: column;
-            }
+        .pill--topic {
+            color: #d8fff0;
+            border-color: rgba(125, 211, 176, 0.32);
+            background: rgba(125, 211, 176, 0.12);
+        }
 
-            .year-range {
-                flex-direction: row !important;
-                display: flex;
-                gap: 8px;
-                width: 100%;
-            }
+        .pill--year {
+            color: #fff0c9;
+            border-color: rgba(242, 195, 107, 0.36);
+            background: rgba(242, 195, 107, 0.12);
+        }
 
-            .desktop-table {
-                display: none;
-            }
+        .table-link {
+            padding: 0;
+            color: var(--primary);
+            background: transparent;
+            border: 0;
+            border-radius: 4px;
+            text-align: left;
+        }
 
-            .question-card {
-                border: 1px solid var(--border);
-                padding: 10px;
-                margin-bottom: 10px;
-                border-radius: 4px;
-            }
+        .pill:hover,
+        .pill:focus-visible,
+        .table-link:hover,
+        .table-link:focus-visible {
+            color: var(--text);
+            border-color: var(--primary);
+            outline: none;
+        }
 
-            .question-card p {
-                margin: 5px 0;
-            }
+        .empty-state {
+            margin: 18px 0;
+            color: var(--muted);
+            text-align: center;
+        }
 
-            .meta,
-            .meta a {
-                display: flex;
-                gap: 15px;
-                font-size: 0.9rem;
-                color: #666;
-            }
+        .desktop-table {
+            display: none;
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .desktop-table th,
+        .desktop-table td {
+            padding: 12px;
+            border-bottom: 1px solid var(--border);
+            text-align: left;
+            vertical-align: top;
+        }
+
+        .desktop-table th {
+            position: sticky;
+            top: 0;
+            z-index: 1;
+            color: var(--muted);
+            background: #151717;
+            font-size: 0.82rem;
+            font-weight: 750;
+        }
+
+        .desktop-table td {
+            color: var(--text);
+        }
+
+        .desktop-table tr:hover td {
+            background: rgba(255, 255, 255, 0.03);
         }
 
         th.sortable {
@@ -129,57 +356,145 @@
             content: '\25B4';
             font-size: 0.8rem;
             margin-left: 5px;
-            color: #999;
+            color: var(--border-strong);
+        }
+
+        th.sortable.asc:after {
+            content: '\25B4';
+            color: var(--accent);
         }
 
         th.sortable.desc:after {
             content: '\25BE';
+            color: var(--accent);
+        }
+
+        @media (min-width: 720px) {
+            body {
+                font-size: 16px;
+            }
+
+            .app-shell {
+                padding: 20px;
+            }
+
+            .study-panel {
+                min-height: calc(100vh - 40px);
+            }
+
+            .app-header {
+                grid-template-columns: minmax(0, 1fr) 380px;
+                align-items: end;
+                padding: 24px;
+            }
+
+            .stat strong {
+                font-size: 1.1rem;
+            }
+
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            .filters {
+                grid-template-columns: minmax(180px, 1.1fr) minmax(220px, 1.2fr) minmax(180px, 0.9fr) minmax(190px, 0.8fr);
+                align-items: end;
+                padding: 16px 24px;
+            }
+
+            .results-bar {
+                padding: 14px 24px;
+            }
+        }
+
+        @media (min-width: 860px) {
+            #questions-cards {
+                display: none;
+            }
+
+            .desktop-table {
+                display: table;
+            }
         }
     </style>
 </head>
 
 <body>
-    <div class="container">
-        <h1>DNB Surgery Question Bank</h1>
-
-        <form id="filters-form">
-            <div class="filters">
-                <select id="topic-filter">
-                    <option value="">All Topics</option>
-                </select>
-
-                <div class="year-range">
-                    <input type="number" id="year-from" placeholder="From" min="0" style="flex:1;">
-                    <input type="number" id="year-to" placeholder="To" min="0" style="flex:1;">
+    <main class="app-shell">
+        <section class="study-panel">
+            <header class="app-header">
+                <div>
+                    <p class="eyebrow">DNB Surgery</p>
+                    <h1>Question Bank</h1>
                 </div>
 
-                <button type="submit">Apply Filters</button>
-                <button type="button" id="remove" onclick="applyFilter()">Remove Filters</button>
+                <div class="stats" aria-label="Question bank stats">
+                    <div class="stat">
+                        <strong id="question-total">--</strong>
+                        <span>Questions</span>
+                    </div>
+                    <div class="stat">
+                        <strong id="topic-total">--</strong>
+                        <span>Topics</span>
+                    </div>
+                    <div class="stat">
+                        <strong id="year-span">--</strong>
+                        <span>Years</span>
+                    </div>
+                </div>
+            </header>
+
+            <form id="filters-form" class="filters">
+                <label class="field" for="topic-filter">
+                    <span>Topic</span>
+                    <select id="topic-filter">
+                        <option value="">All Topics</option>
+                    </select>
+                </label>
+
+                <label class="field" for="search-filter">
+                    <span>Search</span>
+                    <input type="search" id="search-filter" placeholder="Find a question or keyword">
+                </label>
+
+                <div class="year-range">
+                    <label class="field" for="year-from">
+                        <span>From</span>
+                        <input type="number" id="year-from" placeholder="From" min="0">
+                    </label>
+                    <label class="field" for="year-to">
+                        <span>To</span>
+                        <input type="number" id="year-to" placeholder="To" min="0">
+                    </label>
+                </div>
+
+                <div class="actions">
+                    <button class="action-button" type="submit">Apply</button>
+                    <button class="action-button secondary" type="button" id="remove">Reset</button>
+                </div>
+            </form>
+
+            <div class="results-bar">
+                <p id="result-summary">Loading questions...</p>
             </div>
-        </form>
 
-        <!-- Desktop Table -->
-        <table class="desktop-table" style="width:100%; border-collapse:collapse;">
-            <thead>
-                <tr>
-                    <th class="sortable" data-column="topic"
-                        style="text-align:left; padding:8px; border-bottom:1px solid var(--border);">Topic</th>
-                    <th class="sortable" data-column="question"
-                        style="text-align:left; padding:8px; border-bottom:1px solid var(--border);">Question</th>
-                    <th class="sortable" data-column="year"
-                        style="text-align:left; padding:8px; border-bottom:1px solid var(--border);">Year</th>
-                    <th class="sortable" data-column="paper"
-                        style="text-align:left; padding:8px; border-bottom:1px solid var(--border);">Paper</th>
-                    <th class="sortable" data-column="marks"
-                        style="text-align:left; padding:8px; border-bottom:1px solid var(--border);">Marks</th>
-                </tr>
-            </thead>
-            <tbody id="questions-table"></tbody>
-        </table>
+            <table class="desktop-table">
+                <thead>
+                    <tr>
+                        <th class="sortable" data-column="topic">Topic</th>
+                        <th class="sortable" data-column="question">Question</th>
+                        <th class="sortable" data-column="year">Year</th>
+                        <th class="sortable" data-column="month">Month</th>
+                        <th class="sortable" data-column="paper">Paper</th>
+                        <th class="sortable" data-column="marks">Marks</th>
+                    </tr>
+                </thead>
+                <tbody id="questions-table"></tbody>
+            </table>
 
-        <!-- Mobile Cards -->
-        <div id="questions-cards"></div>
-    </div>
+            <div id="questions-cards" aria-live="polite"></div>
+        </section>
+    </main>
 
     <script async>
         const DB_NAME = 'questionsDB';
@@ -253,9 +568,12 @@
             try {
                 data = await dataManager.init();
                 populateFilters();
+                updateStats();
+                updateSortHeaders();
                 renderQuestions();
             } catch (error) {
                 console.error('Error:', error);
+                document.getElementById('result-summary').textContent = 'Unable to load questions.';
             }
         }
 
@@ -264,6 +582,7 @@
             const years = [...new Set(data.map(item => item.year))].sort((a, b) => a - b);
 
             const topicFilter = document.getElementById('topic-filter');
+            topicFilter.innerHTML = '<option value="">All Topics</option>';
             topics.forEach(topic => {
                 const option = document.createElement('option');
                 option.value = topic;
@@ -271,7 +590,6 @@
                 topicFilter.appendChild(option);
             });
 
-            // Set min/max/placeholder for year inputs
             const yearFrom = document.getElementById('year-from');
             const yearTo = document.getElementById('year-to');
             yearFrom.min = years[0];
@@ -282,32 +600,92 @@
             yearTo.placeholder = `To (${years[years.length - 1]})`;
         }
 
+        function updateStats() {
+            const topics = [...new Set(data.map(item => item.topic))];
+            const years = [...new Set(data.map(item => item.year))].sort((a, b) => a - b);
+
+            document.getElementById('question-total').textContent = data.length.toLocaleString();
+            document.getElementById('topic-total').textContent = topics.length.toLocaleString();
+            document.getElementById('year-span').textContent = `${years[0]}-${years[years.length - 1]}`;
+        }
+
+        function getYearBounds() {
+            const years = [...new Set(data.map(item => item.year))].sort((a, b) => a - b);
+            return {
+                minYear: years[0],
+                maxYear: years[years.length - 1]
+            };
+        }
+
+        function formatValue(value) {
+            return value === null || value === undefined || value === '' ? 'NA' : value;
+        }
+
+        function makeFilterButton(type, value, label, className) {
+            const button = document.createElement('button');
+            button.type = 'button';
+            button.className = className;
+            button.textContent = label;
+            button.addEventListener('click', () => applyFilter(type, value));
+            return button;
+        }
+
+        function addTextCell(row, value) {
+            const cell = document.createElement('td');
+            cell.textContent = formatValue(value);
+            row.appendChild(cell);
+        }
+
+        function addButtonCell(row, type, value, label) {
+            const cell = document.createElement('td');
+            cell.appendChild(makeFilterButton(type, value, label, 'table-link'));
+            row.appendChild(cell);
+        }
+
+        function updateResultSummary(count) {
+            const summary = document.getElementById('result-summary');
+            const noun = count === 1 ? 'question' : 'questions';
+            const searchTerm = document.getElementById('search-filter').value.trim();
+            const topicFilter = document.getElementById('topic-filter').value;
+
+            if (!searchTerm && !topicFilter) {
+                summary.textContent = `${count.toLocaleString()} ${noun} shown`;
+                return;
+            }
+
+            summary.textContent = `${count.toLocaleString()} ${noun} match`;
+        }
+
         function renderQuestions() {
             const topicFilter = document.getElementById('topic-filter').value;
+            const searchTerm = document.getElementById('search-filter').value.trim().toLowerCase();
             const yearFromElem = document.getElementById('year-from');
             const yearToElem = document.getElementById('year-to');
-            const years = [...new Set(data.map(item => item.year))].sort((a, b) => a - b);
-            const minYear = years[0];
-            const maxYear = years[years.length - 1];
+            const { minYear, maxYear } = getYearBounds();
 
             let from = parseInt(yearFromElem.value, 10);
             let to = parseInt(yearToElem.value, 10);
 
-            // Default if empty or invalid
             if (isNaN(from) || from < minYear) from = minYear;
             if (isNaN(to) || to > maxYear) to = maxYear;
-            if (from > to) from = minYear; // fallback if range is invalid
+            if (from > to) from = minYear;
 
             const filteredData = data.filter(item => {
+                const searchableText = `${item.question} ${item.topic} ${item.year} ${item.month || ''}`.toLowerCase();
+
                 return (!topicFilter || item.topic === topicFilter) &&
-                    (item.year >= from && item.year <= to);
+                    (item.year >= from && item.year <= to) &&
+                    (!searchTerm || searchableText.includes(searchTerm));
             });
 
-            const sortedData = filteredData.sort((a, b) => {
-                if (a[currentSort.column] < b[currentSort.column]) {
+            const sortedData = [...filteredData].sort((a, b) => {
+                const left = a[currentSort.column] ?? '';
+                const right = b[currentSort.column] ?? '';
+
+                if (left < right) {
                     return currentSort.order === 'asc' ? -1 : 1;
                 }
-                if (a[currentSort.column] > b[currentSort.column]) {
+                if (left > right) {
                     return currentSort.order === 'asc' ? 1 : -1;
                 }
                 return 0;
@@ -319,39 +697,47 @@
             const cardsContainer = document.getElementById('questions-cards');
             cardsContainer.innerHTML = '';
 
+            updateResultSummary(sortedData.length);
+
             if (sortedData.length === 0) {
-                cardsContainer.innerHTML = '<p style="text-align:center; color:#666;">No questions found</p>';
+                const emptyState = document.createElement('p');
+                emptyState.className = 'empty-state';
+                emptyState.textContent = 'No questions match these filters.';
+                cardsContainer.appendChild(emptyState);
                 return;
             }
 
             sortedData.forEach(item => {
                 const row = document.createElement('tr');
-
-                row.innerHTML = `
-                    <td style="padding:8px; border-bottom:1px solid var(--border);">
-                        <a href="#" onclick="applyFilter('topic', '${item.topic}')">${item.topic}</a>
-                    </td>
-                    <td style="padding:8px; border-bottom:1px solid var(--border);">${item.question}</td>
-                    <td style="padding:8px; border-bottom:1px solid var(--border);">
-                        <a href="#" onclick="applyFilter('year', '${item.year}')">${item.year}</a>
-                    </td>
-                    <td style="padding:8px; border-bottom:1px solid var(--border);">${item.paper}</td>
-                    <td style="padding:8px; border-bottom:1px solid var(--border);">${item.marks}</td>
-                `;
-
+                addButtonCell(row, 'topic', item.topic, item.topic);
+                addTextCell(row, item.question);
+                addButtonCell(row, 'year', item.year, item.year);
+                addTextCell(row, item.month);
+                addTextCell(row, item.paper);
+                addTextCell(row, item.marks);
                 tableBody.appendChild(row);
 
                 const card = document.createElement('div');
                 card.className = 'question-card';
-                card.innerHTML = `
-                    <p><strong>${item.question}</strong></p>
-                    <div class="meta">
-                        <span><i><a href="#" onclick="applyFilter('topic', '${item.topic}')">#${item.topic}</a></i></span>
-                        <span><a href="#" onclick="applyFilter('year', '${item.year}')">${item.year}</a></span>
-                        <span>Paper-${item.paper}</span>
-                        <span>Marks: ${item.marks}</span>
-                    </div>
-                `;
+
+                const question = document.createElement('p');
+                question.className = 'question-text';
+                question.textContent = item.question;
+
+                const meta = document.createElement('div');
+                meta.className = 'meta';
+                meta.appendChild(makeFilterButton('topic', item.topic, `# ${item.topic}`, 'pill pill--topic'));
+                meta.appendChild(makeFilterButton('year', item.year, item.year, 'pill pill--year'));
+
+                [item.month, `Paper ${item.paper}`, `Marks: ${formatValue(item.marks)}`].forEach(value => {
+                    const detail = document.createElement('span');
+                    detail.className = 'pill';
+                    detail.textContent = value;
+                    meta.appendChild(detail);
+                });
+
+                card.appendChild(question);
+                card.appendChild(meta);
                 cardsContainer.appendChild(card);
             });
         }
@@ -361,16 +747,26 @@
                 document.getElementById('topic-filter').value = value;
                 document.getElementById('year-from').value = '';
                 document.getElementById('year-to').value = '';
+                document.getElementById('search-filter').value = '';
             } else if (type === 'year') {
                 document.getElementById('year-from').value = value;
-                document.getElementById('year-to').value = value; // Set both from and to year
+                document.getElementById('year-to').value = value;
                 document.getElementById('topic-filter').value = '';
+                document.getElementById('search-filter').value = '';
             } else {
                 document.getElementById('topic-filter').value = '';
                 document.getElementById('year-from').value = '';
                 document.getElementById('year-to').value = '';
+                document.getElementById('search-filter').value = '';
             }
             renderQuestions();
+        }
+
+        function updateSortHeaders() {
+            document.querySelectorAll('th.sortable').forEach(th => {
+                th.classList.toggle('asc', th.dataset.column === currentSort.column && currentSort.order === 'asc');
+                th.classList.toggle('desc', th.dataset.column === currentSort.column && currentSort.order === 'desc');
+            });
         }
 
         function toggleSort(column) {
@@ -380,6 +776,7 @@
                 currentSort.column = column;
                 currentSort.order = 'asc';
             }
+            updateSortHeaders();
             renderQuestions();
         }
 
@@ -403,19 +800,20 @@
 
         document.getElementById('remove').addEventListener('click', () => {
             document.getElementById('topic-filter').value = '';
+            document.getElementById('search-filter').value = '';
             document.getElementById('year-from').value = '';
             document.getElementById('year-to').value = '';
             renderQuestions();
         });
 
-        // Add this function after DataManager class
+        document.getElementById('search-filter').addEventListener('input', renderQuestions);
+        document.getElementById('topic-filter').addEventListener('change', renderQuestions);
+
         async function checkForDataUpdate() {
             try {
-                // Fetch latest data.json
                 const response = await fetch('data.json', { cache: 'no-store' });
                 const latestData = await response.json();
 
-                // Open IndexedDB and get cached data
                 const dbRequest = indexedDB.open(DB_NAME, DB_VERSION);
                 dbRequest.onsuccess = function () {
                     const db = dbRequest.result;
@@ -424,10 +822,8 @@
                     const getRequest = store.get('data');
                     getRequest.onsuccess = function () {
                         const cachedData = getRequest.result;
-                        // Compare stringified data for changes
                         if (JSON.stringify(cachedData) !== JSON.stringify(latestData)) {
                             if (confirm('New question data is available. Reload to update?')) {
-                                // Save new data and reload
                                 const writeTx = db.transaction([STORE_NAME], 'readwrite');
                                 const writeStore = writeTx.objectStore(STORE_NAME);
                                 writeStore.put(latestData, 'data');
@@ -438,14 +834,13 @@
                         }
                     };
                 };
-            } catch (e) {
-                // Ignore errors silently
+            } catch (error) {
+                console.debug('Data update check failed:', error);
             }
         }
 
         fetchData();
 
-        // Check for data update in background after page loads
         window.addEventListener('DOMContentLoaded', () => {
             setTimeout(checkForDataUpdate, 1000);
         });
