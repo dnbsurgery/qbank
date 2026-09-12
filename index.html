@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DNB Surgery Question Bank</title>
+    <!-- Marked.js CDN for client-side Markdown rendering -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <style>
         :root {
             color-scheme: dark;
@@ -97,6 +99,12 @@
             line-height: 1.12;
         }
 
+        .header-controls {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
         .stats {
             display: grid;
             grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -129,6 +137,47 @@
             font-size: 0.78rem;
         }
 
+        /* BYOK Header Button */
+        .byok-header-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 8px 14px;
+            font-size: 0.84rem;
+            font-weight: 600;
+            color: var(--text);
+            background: var(--surface-soft);
+            border: 1px solid var(--border-strong);
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            width: 100%;
+        }
+
+        .byok-header-btn:hover {
+            background: var(--surface-raised);
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .byok-header-btn.configured {
+            border-color: rgba(125, 211, 176, 0.4);
+            background: rgba(125, 211, 176, 0.08);
+        }
+
+        .byok-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--danger);
+            flex-shrink: 0;
+        }
+
+        .byok-header-btn.configured .byok-dot {
+            background: var(--primary);
+            box-shadow: 0 0 8px var(--primary);
+        }
+
         .filters {
             display: grid;
             gap: 10px;
@@ -149,7 +198,8 @@
             min-width: 0;
         }
 
-        .field span {
+        .field span,
+        .field label {
             color: var(--muted);
             font-size: 0.8rem;
             font-weight: 650;
@@ -184,19 +234,23 @@
         }
 
         .action-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
             min-height: 46px;
-            padding: 10px 12px;
-            color: #07110d;
+            padding: 10px 16px;
+            color: #0c120f;
             background: var(--primary);
             border: 1px solid transparent;
             border-radius: 8px;
-            font-weight: 750;
-            text-align: center;
+            font-weight: 700;
+            transition: all 0.2s ease;
         }
 
         .action-button:hover,
         .action-button:focus-visible {
             background: var(--primary-strong);
+            outline: none;
         }
 
         .action-button.secondary {
@@ -257,6 +311,7 @@
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
+            align-items: center;
         }
 
         .pill,
@@ -369,6 +424,400 @@
             color: var(--accent);
         }
 
+        .col-action {
+            width: 100px;
+            text-align: center;
+        }
+
+        /* AI Answer Button */
+        .btn-ai-ans {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 6px 12px;
+            font-size: 0.8rem;
+            font-weight: 650;
+            color: var(--primary);
+            background: rgba(125, 211, 176, 0.08);
+            border: 1px solid rgba(125, 211, 176, 0.28);
+            border-radius: 6px;
+            white-space: nowrap;
+            transition: all 0.2s ease;
+        }
+
+        .btn-ai-ans:hover {
+            background: rgba(125, 211, 176, 0.18);
+            border-color: var(--primary);
+            transform: translateY(-1px);
+        }
+
+        .btn-ai-ans.has-cached {
+            color: var(--accent);
+            border-color: rgba(242, 195, 107, 0.35);
+            background: rgba(242, 195, 107, 0.08);
+        }
+
+        .btn-ai-ans.has-cached:hover {
+            background: rgba(242, 195, 107, 0.18);
+            border-color: var(--accent);
+        }
+
+        /* Expandable Answer Box */
+        .answer-expand-tr td {
+            padding: 0 !important;
+            background: var(--surface-soft) !important;
+            border-bottom: 2px solid var(--border-strong) !important;
+        }
+
+        .answer-expand-box {
+            margin-top: 10px;
+            background: var(--surface);
+            border: 1px solid var(--border-strong);
+            border-radius: 8px;
+            overflow: hidden;
+            animation: fadeIn 0.2s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-4px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .answer-panel {
+            padding: 16px 20px;
+        }
+
+        .answer-header-bar {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            padding: 10px 18px;
+            background: var(--surface-raised);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .answer-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .model-badge {
+            font-size: 0.72rem;
+            font-weight: 600;
+            padding: 2px 7px;
+            background: rgba(125, 211, 176, 0.12);
+            border: 1px solid rgba(125, 211, 176, 0.3);
+            border-radius: 4px;
+            color: var(--primary);
+        }
+
+        .answer-meta-tools {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .ans-action-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 5px 10px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--text);
+            background: var(--surface-soft);
+            border: 1px solid var(--border);
+            border-radius: 5px;
+            transition: all 0.15s ease;
+        }
+
+        .ans-action-btn:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .ans-action-btn.btn-copied {
+            background: rgba(125, 211, 176, 0.18);
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        /* Waiting / Loading State */
+        .answer-loader {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 36px 16px;
+            gap: 14px;
+        }
+
+        .pulse-spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid rgba(125, 211, 176, 0.2);
+            border-top-color: var(--primary);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .loader-text {
+            font-size: 0.92rem;
+            font-weight: 600;
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .skeleton-wrap {
+            width: 100%;
+            max-width: 680px;
+            margin-top: 10px;
+        }
+
+        .skeleton-line {
+            height: 13px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            background: linear-gradient(90deg, rgba(255,255,255,0.03) 25%, rgba(255,255,255,0.08) 50%, rgba(255,255,255,0.03) 75%);
+            background-size: 200% 100%;
+            animation: shimmer 1.5s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+
+        /* Rendered Answer Typography */
+        .rendered-answer {
+            font-size: 0.94rem;
+            line-height: 1.65;
+            color: var(--text);
+        }
+
+        .rendered-answer h1, 
+        .rendered-answer h2, 
+        .rendered-answer h3, 
+        .rendered-answer h4 {
+            color: var(--primary);
+            margin: 16px 0 8px;
+            line-height: 1.25;
+        }
+
+        .rendered-answer h1 { font-size: 1.25rem; }
+        .rendered-answer h2 { font-size: 1.12rem; }
+        .rendered-answer h3 { font-size: 1.02rem; }
+        .rendered-answer h4 { font-size: 0.92rem; }
+        .rendered-answer p { margin: 8px 0; }
+
+        .rendered-answer ul, 
+        .rendered-answer ol {
+            margin: 8px 0 12px;
+            padding-left: 22px;
+        }
+
+        .rendered-answer li { margin-bottom: 4px; }
+
+        .rendered-answer table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 14px 0;
+            font-size: 0.88rem;
+            background: var(--surface-soft);
+            border-radius: 6px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+        }
+
+        .rendered-answer th, 
+        .rendered-answer td {
+            padding: 8px 12px;
+            border: 1px solid var(--border);
+            text-align: left;
+        }
+
+        .rendered-answer th {
+            background: var(--surface-raised);
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .rendered-answer tr:nth-child(even) td {
+            background: rgba(255, 255, 255, 0.015);
+        }
+
+        .rendered-answer blockquote {
+            margin: 12px 0;
+            padding: 10px 16px;
+            background: rgba(125, 211, 176, 0.06);
+            border-left: 3px solid var(--primary);
+            border-radius: 0 6px 6px 0;
+            color: var(--muted);
+        }
+
+        .rendered-answer pre {
+            background: #0b0c0c;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 12px;
+            overflow-x: auto;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+            font-size: 0.85rem;
+        }
+
+        .rendered-answer code {
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+            background: rgba(255, 255, 255, 0.08);
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-size: 0.88em;
+        }
+
+        /* Error and Prompt Cards */
+        .answer-key-prompt,
+        .answer-error-box {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 14px 18px;
+            border-radius: 8px;
+            background: var(--surface-raised);
+            border: 1px solid var(--border-strong);
+        }
+
+        .answer-error-box {
+            border-color: rgba(244, 143, 143, 0.35);
+            background: rgba(244, 143, 143, 0.06);
+        }
+
+        /* BYOK Modal */
+        .byok-modal-backdrop {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: rgba(0, 0, 0, 0.72);
+            backdrop-filter: blur(5px);
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+        }
+
+        .byok-modal-backdrop.open {
+            display: flex;
+        }
+
+        .byok-modal {
+            width: min(100%, 480px);
+            background: var(--surface);
+            border: 1px solid var(--border-strong);
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: var(--shadow);
+            color: var(--text);
+            animation: modalPop 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes modalPop {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .byok-modal-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+
+        .byok-modal h2 {
+            margin: 0;
+            font-size: 1.25rem;
+            color: var(--text);
+        }
+
+        .byok-close-btn {
+            background: transparent;
+            border: 0;
+            color: var(--muted);
+            font-size: 1.2rem;
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+
+        .byok-close-btn:hover {
+            color: var(--text);
+            background: var(--surface-raised);
+        }
+
+        .byok-desc {
+            margin: 0 0 18px;
+            color: var(--muted);
+            font-size: 0.88rem;
+            line-height: 1.45;
+        }
+
+        .byok-input-wrap {
+            display: flex;
+            gap: 8px;
+        }
+
+        .byok-cache-info {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 16px;
+            padding-top: 14px;
+            border-top: 1px solid var(--border);
+            font-size: 0.84rem;
+            color: var(--muted);
+        }
+
+        .btn-text-danger {
+            background: transparent;
+            border: 0;
+            color: var(--danger);
+            font-size: 0.82rem;
+            text-decoration: underline;
+            padding: 0;
+        }
+
+        .btn-text-danger:hover {
+            color: #ffb3b3;
+        }
+
+        .byok-actions {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+            gap: 12px;
+        }
+
+        .byok-get-link {
+            color: var(--primary);
+            font-size: 0.84rem;
+            text-decoration: none;
+        }
+
+        .byok-get-link:hover {
+            text-decoration: underline;
+        }
+
         @media (min-width: 720px) {
             body {
                 font-size: 16px;
@@ -428,19 +877,26 @@
                     <h1>Question Bank</h1>
                 </div>
 
-                <div class="stats" aria-label="Question bank stats">
-                    <div class="stat">
-                        <strong id="question-total">--</strong>
-                        <span>Questions</span>
+                <div class="header-controls">
+                    <div class="stats" aria-label="Question bank stats">
+                        <div class="stat">
+                            <strong id="question-total">--</strong>
+                            <span>Questions</span>
+                        </div>
+                        <div class="stat">
+                            <strong id="topic-total">--</strong>
+                            <span>Topics</span>
+                        </div>
+                        <div class="stat">
+                            <strong id="year-span">--</strong>
+                            <span>Years</span>
+                        </div>
                     </div>
-                    <div class="stat">
-                        <strong id="topic-total">--</strong>
-                        <span>Topics</span>
-                    </div>
-                    <div class="stat">
-                        <strong id="year-span">--</strong>
-                        <span>Years</span>
-                    </div>
+
+                    <button type="button" id="byok-btn" class="byok-header-btn" title="Configure your Gemini API key">
+                        <span class="byok-dot"></span>
+                        <span id="byok-btn-label">Set Gemini API Key</span>
+                    </button>
                 </div>
             </header>
 
@@ -487,6 +943,7 @@
                         <th class="sortable" data-column="month">Month</th>
                         <th class="sortable" data-column="paper">Paper</th>
                         <th class="sortable" data-column="marks">Marks</th>
+                        <th class="col-action">Answer</th>
                     </tr>
                 </thead>
                 <tbody id="questions-table"></tbody>
@@ -495,6 +952,50 @@
             <div id="questions-cards" aria-live="polite"></div>
         </section>
     </main>
+
+    <!-- BYOK Modal Dialog -->
+    <div id="byok-modal" class="byok-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="byok-title">
+        <div class="byok-modal">
+            <div class="byok-modal-header">
+                <h2 id="byok-title">✨ Gemini API Settings (BYOK)</h2>
+                <button type="button" class="byok-close-btn" id="byok-close-x" aria-label="Close">✕</button>
+            </div>
+            <p class="byok-desc">
+                Your key is stored <strong>only in your browser's localStorage</strong>. It connects directly to Google's serverless Gemini endpoints and is never logged or sent to any third party.
+            </p>
+
+            <div class="field">
+                <label for="byok-input">Gemini API Key</label>
+                <div class="byok-input-wrap">
+                    <input type="password" id="byok-input" placeholder="Paste your API key (AIzaSy...)" autocomplete="off" spellcheck="false">
+                    <button type="button" id="byok-toggle-vis" class="action-button secondary" style="min-height: 46px; padding: 0 14px;" title="Toggle key visibility">👁</button>
+                </div>
+            </div>
+
+            <div class="field" style="margin-top: 14px;">
+                <label for="byok-model-select">Gemini Model</label>
+                <select id="byok-model-select">
+                    <option value="gemini-2.5-flash">Gemini 2.5 Flash (Fast, Recommended)</option>
+                    <option value="gemini-3.8-flash">Gemini 3.8 Flash (Latest Flash)</option>
+                    <option value="gemini-2.5-pro">Gemini 2.5 Pro (Deep Clinical Reasoning)</option>
+                    <option value="gemini-1.5-flash">Gemini 1.5 Flash (Legacy)</option>
+                </select>
+            </div>
+
+            <div class="byok-cache-info">
+                <span id="cache-count-label">0 cached answers stored</span>
+                <button type="button" id="byok-clear-cache" class="btn-text-danger">Clear Cache</button>
+            </div>
+
+            <div class="byok-actions">
+                <a href="https://aistudio.google.com/app/apikey" target="_blank" rel="noopener" class="byok-get-link">Get Free Key from Google AI Studio ↗</a>
+                <div style="display: flex; gap: 8px;">
+                    <button type="button" class="action-button secondary" id="byok-cancel">Cancel</button>
+                    <button type="button" class="action-button" id="byok-save">Save & Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script async>
         const DB_NAME = 'questionsDB';
@@ -564,12 +1065,388 @@
         let data = [];
         const dataManager = new DataManager('data.json');
 
+        // =========================================================================
+        // BYOK & GEMINI API CLIENT LOGIC
+        // =========================================================================
+        const STORAGE_KEY_API = 'dnb_gemini_api_key';
+        const STORAGE_KEY_MODEL = 'dnb_gemini_model';
+        const CACHE_PREFIX = 'dnb_ans_';
+
+        function getApiKey() {
+            return (localStorage.getItem(STORAGE_KEY_API) || '').trim();
+        }
+
+        function getSelectedModel() {
+            return (localStorage.getItem(STORAGE_KEY_MODEL) || 'gemini-2.5-flash').trim();
+        }
+
+        function updateByokHeaderStatus() {
+            const btn = document.getElementById('byok-btn');
+            const label = document.getElementById('byok-btn-label');
+            const key = getApiKey();
+            const model = getSelectedModel();
+
+            if (key) {
+                btn.classList.add('configured');
+                label.textContent = `Key Active (${model.replace('gemini-', '')})`;
+            } else {
+                btn.classList.remove('configured');
+                label.textContent = 'Set Gemini API Key';
+            }
+            updateCachedCount();
+        }
+
+        function openByokModal() {
+            const modal = document.getElementById('byok-modal');
+            const input = document.getElementById('byok-input');
+            const select = document.getElementById('byok-model-select');
+
+            input.value = getApiKey();
+            select.value = getSelectedModel();
+            updateCachedCount();
+            modal.classList.add('open');
+            setTimeout(() => input.focus(), 50);
+        }
+
+        function closeByokModal() {
+            document.getElementById('byok-modal').classList.remove('open');
+        }
+
+        function saveByokSettings() {
+            const input = document.getElementById('byok-input');
+            const select = document.getElementById('byok-model-select');
+            const key = input.value.trim();
+            const model = select.value.trim();
+
+            if (key) {
+                localStorage.setItem(STORAGE_KEY_API, key);
+            } else {
+                localStorage.removeItem(STORAGE_KEY_API);
+            }
+            localStorage.setItem(STORAGE_KEY_MODEL, model);
+
+            updateByokHeaderStatus();
+            closeByokModal();
+        }
+
+        function updateCachedCount() {
+            let count = 0;
+            for (let i = 0; i < localStorage.length; i++) {
+                if (localStorage.key(i).startsWith(CACHE_PREFIX)) count++;
+            }
+            const label = document.getElementById('cache-count-label');
+            if (label) {
+                label.textContent = `${count} cached answer${count === 1 ? '' : 's'} stored`;
+            }
+        }
+
+        function clearAllCachedAnswers() {
+            if (!confirm('Clear all locally saved answers? You can regenerate them at any time.')) return;
+            const keysToRemove = [];
+            for (let i = 0; i < localStorage.length; i++) {
+                const k = localStorage.key(i);
+                if (k.startsWith(CACHE_PREFIX)) keysToRemove.push(k);
+            }
+            keysToRemove.forEach(k => localStorage.removeItem(k));
+            updateCachedCount();
+            renderQuestions();
+        }
+
+        function getQuestionKey(item) {
+            const str = `${item.topic || ''}_${item.year || ''}_${item.paper || ''}_${item.question || ''}`;
+            let hash = 0;
+            for (let i = 0; i < str.length; i++) {
+                hash = ((hash << 5) - hash) + str.charCodeAt(i);
+                hash |= 0;
+            }
+            return Math.abs(hash).toString(36);
+        }
+
+        function escapeHtml(str) {
+            const div = document.createElement('div');
+            div.textContent = str;
+            return div.innerHTML;
+        }
+
+        // =========================================================================
+        // GEMINI API CALL WITH CONSULTANT COACHING PROMPT
+        // =========================================================================
+        async function callGeminiApi(item, apiKey, model) {
+            const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
+
+            const systemPrompt = `You are a Senior General Surgery Consultant and DNB examiner conducting an intensive exam-prep masterclass for a DNB Surgery candidate.
+The candidate needs concise, high-yield, exam-reproducible MODEL ANSWERS (approx. 400–600 words for Short Notes, 750–900 words for Long Questions).
+DO NOT write an exhaustive textbook chapter. Provide crisp, structured notes with bold keywords, tables, and bullet points that can be committed to memory and reproduced in 8–10 minutes during the exam.
+
+REQUIRED TEMPLATE:
+1. Quick Revision Reference (2 to 3 lines max):
+   - Bailey & Love (28th Ed): Chapter number & title (key table/figure if any)
+   - Sabiston (21st Ed): Chapter number & title
+   - Examiner's High-Yield Pearl: 1–2 key lines or must-mention buzzwords.
+2. Definition & Core Introduction (1–2 sharp sentences).
+3. Classification / Staging (clean table or concise bullets).
+4. Pathophysiology / Surgical Anatomy / Clinical Features (bold keywords, diagnostic criteria).
+5. Management & Surgical Steps (Stepwise: Resuscitation -> Workup -> Operative approach/steps).
+6. Complications & Post-Op Care (early vs late).
+7. Recent Advances / Landmark Trials (3-4 points max).
+
+STYLE RULES: No filler phrases. High keyword density. Compact tables.`;
+
+            const userPrompt = `Provide a concise, high-yield exam-reproducible DNB Surgery MODEL ANSWER for:
+
+Question: ${item.question}
+Topic: ${item.topic}
+Exam Source: ${item.year} (${item.month || ''}), Paper ${item.paper}
+Marks: ${item.marks || 'Short Note'}`;
+
+            const payload = {
+                contents: [{ role: 'user', parts: [{ text: userPrompt }] }],
+                systemInstruction: { parts: [{ text: systemPrompt }] },
+                generationConfig: {
+                    temperature: 0.2,
+                    maxOutputTokens: 8192
+                }
+            };
+
+            const response = await fetch(url, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+
+            if (!response.ok) {
+                const errData = await response.json().catch(() => ({}));
+                const errMsg = errData.error?.message || `HTTP Error ${response.status} (${response.statusText})`;
+                throw new Error(errMsg);
+            }
+
+            const data = await response.json();
+            const candidate = data.candidates?.[0];
+            if (!candidate?.content?.parts?.[0]?.text) {
+                throw new Error('No content returned from Gemini.');
+            }
+
+            return candidate.content.parts.map(p => p.text || '').join('');
+        }
+
+        // =========================================================================
+        // ANSWER RENDERING & INTERACTION
+        // =========================================================================
+        function handleAnswerClick(item, containerEl, isMobile) {
+            const qKey = getQuestionKey(item);
+            const existingAnswerContainer = isMobile 
+                ? containerEl.querySelector(`.answer-expand-box[data-qid="${qKey}"]`)
+                : document.getElementById(`ans-tr-${qKey}`);
+
+            if (existingAnswerContainer) {
+                const isHidden = existingAnswerContainer.style.display === 'none';
+                existingAnswerContainer.style.display = isHidden ? (isMobile ? 'block' : 'table-row') : 'none';
+                return;
+            }
+
+            if (isMobile) {
+                const answerBox = document.createElement('div');
+                answerBox.className = 'answer-expand-box';
+                answerBox.setAttribute('data-qid', qKey);
+                containerEl.appendChild(answerBox);
+                renderAnswerContent(item, answerBox, qKey, isMobile);
+            } else {
+                const answerTr = document.createElement('tr');
+                answerTr.className = 'answer-expand-tr';
+                answerTr.id = `ans-tr-${qKey}`;
+                const answerTd = document.createElement('td');
+                answerTd.colSpan = 7;
+                answerTr.appendChild(answerTd);
+                containerEl.after(answerTr);
+                renderAnswerContent(item, answerTd, qKey, isMobile);
+            }
+        }
+
+        function renderAnswerContent(item, targetContainer, qKey, isMobile) {
+            const apiKey = getApiKey();
+            const cachedAnswer = localStorage.getItem(CACHE_PREFIX + qKey);
+
+            if (cachedAnswer) {
+                displayCompletedAnswer(item, targetContainer, qKey, cachedAnswer);
+                return;
+            }
+
+            if (!apiKey) {
+                targetContainer.innerHTML = `
+                    <div class="answer-panel">
+                        <div class="answer-key-prompt">
+                            <span style="font-size: 1.5rem;">🔑</span>
+                            <div style="flex: 1;">
+                                <strong>Gemini API Key Required</strong>
+                                <p style="margin: 4px 0 0; color: var(--muted); font-size: 0.86rem;">
+                                    To generate this model answer, enter your free Gemini API key. Stored 100% locally in your browser.
+                                </p>
+                            </div>
+                            <button type="button" class="action-button" onclick="openByokModal()">Set Key</button>
+                        </div>
+                    </div>
+                `;
+                return;
+            }
+
+            fetchAndDisplayAnswer(item, targetContainer, qKey);
+        }
+
+        async function fetchAndDisplayAnswer(item, targetContainer, qKey) {
+            const apiKey = getApiKey();
+            const model = getSelectedModel();
+
+            if (!apiKey) {
+                openByokModal();
+                return;
+            }
+
+            targetContainer.innerHTML = `
+                <div class="answer-panel">
+                    <div class="answer-loader">
+                        <div class="pulse-spinner"></div>
+                        <div class="loader-text">
+                            <span>Consultant is formulating DNB model answer...</span>
+                        </div>
+                        <div class="skeleton-wrap">
+                            <div class="skeleton-line" style="width: 80%;"></div>
+                            <div class="skeleton-line" style="width: 100%;"></div>
+                            <div class="skeleton-line" style="width: 92%;"></div>
+                            <div class="skeleton-line" style="width: 68%;"></div>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            try {
+                const markdown = await callGeminiApi(item, apiKey, model);
+                localStorage.setItem(CACHE_PREFIX + qKey, markdown);
+                updateCachedCount();
+
+                // Update trigger button states
+                document.querySelectorAll(`#btn-table-${qKey}, #btn-card-${qKey}`).forEach(btn => {
+                    btn.classList.add('has-cached');
+                    btn.innerHTML = btn.id.includes('card') ? '📖 View Answer' : '📖 View';
+                });
+
+                displayCompletedAnswer(item, targetContainer, qKey, markdown);
+            } catch (err) {
+                targetContainer.innerHTML = `
+                    <div class="answer-panel">
+                        <div class="answer-error-box">
+                            <div>
+                                <strong>⚠️ Generation Failed</strong>
+                                <p style="margin: 4px 0 0; color: var(--danger); font-size: 0.88rem;">${escapeHtml(err.message)}</p>
+                            </div>
+                            <div style="display: flex; gap: 8px;">
+                                <button type="button" class="action-button secondary" id="retry-btn-${qKey}">🔄 Retry</button>
+                                <button type="button" class="action-button" onclick="openByokModal()">Key Settings</button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                const retryBtn = targetContainer.querySelector(`#retry-btn-${qKey}`);
+                if (retryBtn) {
+                    retryBtn.addEventListener('click', () => fetchAndDisplayAnswer(item, targetContainer, qKey));
+                }
+            }
+        }
+
+        function displayCompletedAnswer(item, targetContainer, qKey, markdown) {
+            const renderedHtml = typeof marked !== 'undefined' ? marked.parse(markdown) : `<pre>${escapeHtml(markdown)}</pre>`;
+            const currentModel = getSelectedModel();
+
+            targetContainer.innerHTML = `
+                <div class="answer-expand-box">
+                    <div class="answer-header-bar">
+                        <div class="answer-tag">
+                            <span>✨ DNB Model Answer</span>
+                            <span class="model-badge">${currentModel}</span>
+                        </div>
+                        <div class="answer-meta-tools">
+                            <button type="button" class="ans-action-btn" id="copy-btn-${qKey}" title="Copy markdown to clipboard">
+                                <span>📋 Copy</span>
+                            </button>
+                            <button type="button" class="ans-action-btn" id="regen-btn-${qKey}" title="Regenerate with fresh AI response">
+                                <span>🔄 Regenerate</span>
+                            </button>
+                            <button type="button" class="ans-action-btn" id="close-btn-${qKey}" title="Collapse answer">
+                                <span>✕ Close</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="answer-panel">
+                        <div class="rendered-answer">${renderedHtml}</div>
+                    </div>
+                </div>
+            `;
+
+            const copyBtn = targetContainer.querySelector(`#copy-btn-${qKey}`);
+            if (copyBtn) {
+                copyBtn.addEventListener('click', () => copyToClipboard(markdown, copyBtn));
+            }
+
+            const regenBtn = targetContainer.querySelector(`#regen-btn-${qKey}`);
+            if (regenBtn) {
+                regenBtn.addEventListener('click', () => {
+                    fetchAndDisplayAnswer(item, targetContainer, qKey);
+                });
+            }
+
+            const closeBtn = targetContainer.querySelector(`#close-btn-${qKey}`);
+            if (closeBtn) {
+                closeBtn.addEventListener('click', () => {
+                    const tr = targetContainer.closest('tr');
+                    if (tr) tr.style.display = 'none';
+                    const box = targetContainer.closest('.answer-expand-box');
+                    if (box) box.style.display = 'none';
+                });
+            }
+        }
+
+        function copyToClipboard(text, buttonEl) {
+            const showSuccess = () => {
+                buttonEl.classList.add('btn-copied');
+                buttonEl.innerHTML = '<span>✓ Copied!</span>';
+                setTimeout(() => {
+                    buttonEl.classList.remove('btn-copied');
+                    buttonEl.innerHTML = '<span>📋 Copy</span>';
+                }, 2000);
+            };
+
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(text).then(showSuccess).catch(() => fallbackCopy(text, showSuccess));
+            } else {
+                fallbackCopy(text, showSuccess);
+            }
+        }
+
+        function fallbackCopy(text, onSuccess) {
+            const ta = document.createElement('textarea');
+            ta.value = text;
+            ta.style.position = 'fixed';
+            ta.style.left = '-9999px';
+            document.body.appendChild(ta);
+            ta.select();
+            try {
+                document.execCommand('copy');
+                onSuccess();
+            } catch (e) {
+                alert('Copy failed. Please manually select the text to copy.');
+            }
+            document.body.removeChild(ta);
+        }
+
+        // =========================================================================
+        // DATA & UI INITIALIZATION
+        // =========================================================================
         async function fetchData() {
             try {
                 data = await dataManager.init();
                 populateFilters();
                 updateStats();
                 updateSortHeaders();
+                updateByokHeaderStatus();
                 renderQuestions();
             } catch (error) {
                 console.error('Error:', error);
@@ -708,17 +1585,41 @@
             }
 
             sortedData.forEach(item => {
+                const qKey = getQuestionKey(item);
+                const hasCached = !!localStorage.getItem(CACHE_PREFIX + qKey);
+
+                // Table Row
                 const row = document.createElement('tr');
+                row.id = `q-row-${qKey}`;
                 addButtonCell(row, 'topic', item.topic, item.topic);
                 addTextCell(row, item.question);
                 addButtonCell(row, 'year', item.year, item.year);
                 addTextCell(row, item.month);
                 addTextCell(row, item.paper);
                 addTextCell(row, item.marks);
+
+                // AI Answer Button Cell
+                const actionCell = document.createElement('td');
+                actionCell.className = 'col-action';
+                const aiBtn = document.createElement('button');
+                aiBtn.type = 'button';
+                aiBtn.className = `btn-ai-ans ${hasCached ? 'has-cached' : ''}`;
+                aiBtn.id = `btn-table-${qKey}`;
+                aiBtn.innerHTML = hasCached ? '📖 View' : '✨ Answer';
+                aiBtn.title = hasCached ? 'View cached DNB model answer' : 'Generate DNB model answer with Gemini';
+                aiBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    handleAnswerClick(item, row, false);
+                });
+                actionCell.appendChild(aiBtn);
+                row.appendChild(actionCell);
+
                 tableBody.appendChild(row);
 
+                // Mobile Card View
                 const card = document.createElement('div');
                 card.className = 'question-card';
+                card.id = `q-card-${qKey}`;
 
                 const question = document.createElement('p');
                 question.className = 'question-text';
@@ -735,6 +1636,18 @@
                     detail.textContent = value;
                     meta.appendChild(detail);
                 });
+
+                const cardAiBtn = document.createElement('button');
+                cardAiBtn.type = 'button';
+                cardAiBtn.className = `btn-ai-ans ${hasCached ? 'has-cached' : ''}`;
+                cardAiBtn.id = `btn-card-${qKey}`;
+                cardAiBtn.innerHTML = hasCached ? '📖 View Answer' : '✨ AI Answer';
+                cardAiBtn.title = hasCached ? 'View cached DNB model answer' : 'Generate DNB model answer with Gemini';
+                cardAiBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    handleAnswerClick(item, card, true);
+                });
+                meta.appendChild(cardAiBtn);
 
                 card.appendChild(question);
                 card.appendChild(meta);
@@ -808,6 +1721,22 @@
 
         document.getElementById('search-filter').addEventListener('input', renderQuestions);
         document.getElementById('topic-filter').addEventListener('change', renderQuestions);
+
+        // Modal event listeners
+        document.getElementById('byok-btn').addEventListener('click', openByokModal);
+        document.getElementById('byok-close-x').addEventListener('click', closeByokModal);
+        document.getElementById('byok-cancel').addEventListener('click', closeByokModal);
+        document.getElementById('byok-save').addEventListener('click', saveByokSettings);
+        document.getElementById('byok-clear-cache').addEventListener('click', clearAllCachedAnswers);
+
+        document.getElementById('byok-modal').addEventListener('click', (e) => {
+            if (e.target.id === 'byok-modal') closeByokModal();
+        });
+
+        document.getElementById('byok-toggle-vis').addEventListener('click', () => {
+            const input = document.getElementById('byok-input');
+            input.type = input.type === 'password' ? 'text' : 'password';
+        });
 
         async function checkForDataUpdate() {
             try {
