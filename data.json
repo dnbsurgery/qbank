@@ -208,6 +208,22 @@
         "year": 2024
     },
     {
+        "marks": 5,
+        "month": "December",
+        "paper": 4,
+        "question": "Role of imaging in pre-operative planning and post-operative assessment in minimal access AWR. [5]",
+        "topic": "Abdominal Wall and Umbilicus",
+        "year": 2025
+    },
+    {
+        "marks": 5,
+        "month": "December",
+        "paper": 4,
+        "question": "Surgery for divarication of recti: Guidelines and recommendations. [5]",
+        "topic": "Abdominal Wall and Umbilicus",
+        "year": 2025
+    },
+    {
         "marks": null,
         "month": "June",
         "paper": 3,
@@ -350,6 +366,14 @@
         "question": "Role of radiofrequency ablation in treatment of solid organ metastases.",
         "topic": "Adjuvant Therapy",
         "year": 2023
+    },
+    {
+        "marks": 5,
+        "month": "June",
+        "paper": 2,
+        "question": "Targeted chemotherapy. [5]",
+        "topic": "Adjuvant Therapy",
+        "year": 2025
     },
     {
         "marks": 5,
@@ -552,6 +576,38 @@
         "year": 2024
     },
     {
+        "marks": 5,
+        "month": "June",
+        "paper": 4,
+        "question": "Endoluminal USG [5]",
+        "topic": "Advanced Imaging Methods",
+        "year": 2025
+    },
+    {
+        "marks": 5,
+        "month": "December",
+        "paper": 4,
+        "question": "Third space endoscopy. [5]",
+        "topic": "Advanced Imaging Methods",
+        "year": 2025
+    },
+    {
+        "marks": 5,
+        "month": "December",
+        "paper": 4,
+        "question": "Uses of ICG in surgical patient. [5]",
+        "topic": "Advanced Imaging Methods",
+        "year": 2025
+    },
+    {
+        "marks": 5,
+        "month": "December",
+        "paper": 4,
+        "question": "Laparoscopic ultrasound. [5]",
+        "topic": "Advanced Imaging Methods",
+        "year": 2025
+    },
+    {
         "marks": 15,
         "month": "June",
         "paper": 4,
@@ -582,6 +638,14 @@
         "question": "Types of amputations for the lower limb. [5] Differentiate between arterial and venous ulcer. [5]",
         "topic": "Amputations",
         "year": 2021
+    },
+    {
+        "marks": 10,
+        "month": "June",
+        "paper": 2,
+        "question": "Write a note on lower limb amputations mentioning its types, indications and key operative considerations. [2+3+5]",
+        "topic": "Amputations",
+        "year": 2025
     },
     {
         "marks": 5,
@@ -688,6 +752,22 @@
         "year": 2024
     },
     {
+        "marks": 10,
+        "month": "December",
+        "paper": 1,
+        "question": "Briefly describe the commonly used drugs with their doses and techniques of local anaesthesia. [10]",
+        "topic": "Anaesthesia",
+        "year": 2025
+    },
+    {
+        "marks": 5,
+        "month": "December",
+        "paper": 4,
+        "question": "STOPBANG score. [5]",
+        "topic": "Anaesthesia",
+        "year": 2025
+    },
+    {
         "marks": null,
         "month": "December",
         "paper": 3,
@@ -738,8 +818,16 @@
     {
         "marks": 5,
         "month": "June",
+        "paper": 3,
+        "question": "Management of appendicular lump. [5]",
+        "topic": "Appendix",
+        "year": 2025
+    },
+    {
+        "marks": 5,
+        "month": "June",
         "paper": 2,
-        "question": "Raynaud’s phenomena",
+        "question": "Raynaud\u2019s phenomena",
         "topic": "Arterial Diseases",
         "year": 1998
     },
@@ -987,7 +1075,7 @@
         "marks": 10,
         "month": "October",
         "paper": 3,
-        "question": "“Blue-toe” syndrome. Above-knee amputation for gangrene.",
+        "question": "\u201cBlue-toe\u201d syndrome. Above-knee amputation for gangrene.",
         "topic": "Arterial Diseases",
         "year": 2023
     },
@@ -1030,6 +1118,14 @@
         "question": "Describe the workup and management of a 45-year-old smoker presenting with history of intermittent claudication in both lower limbs of 6 months duration.",
         "topic": "Arterial Diseases",
         "year": 2024
+    },
+    {
+        "marks": 10,
+        "month": "December",
+        "paper": 3,
+        "question": "A 50-year-old male, known case of NIDDM and with BMI of 31 kg/m2, complains of calf pain after walking for approximately 1 km. Discuss the evaluation and management of this patient. [10]",
+        "topic": "Arterial Diseases",
+        "year": 2025
     },
     {
         "marks": 5,
@@ -1736,6 +1832,62 @@
         "year": 2024
     },
     {
+        "marks": 5,
+        "month": "June",
+        "paper": 2,
+        "question": "Aberration in normal development and involution of breast (ANDI). [5]",
+        "topic": "Breast",
+        "year": 2025
+    },
+    {
+        "marks": 5,
+        "month": "June",
+        "paper": 2,
+        "question": "Familial breast cancer. [5]",
+        "topic": "Breast",
+        "year": 2025
+    },
+    {
+        "marks": 5,
+        "month": "June",
+        "paper": 2,
+        "question": "TNM staging of carcinoma breast. [5]",
+        "topic": "Breast",
+        "year": 2025
+    },
+    {
+        "marks": 5,
+        "month": "June",
+        "paper": 2,
+        "question": "Sentinel lymph node biopsy. [5]",
+        "topic": "Breast",
+        "year": 2025
+    },
+    {
+        "marks": 10,
+        "month": "December",
+        "paper": 2,
+        "question": "Discuss the pathology, clinical features and management of Phyllodes tumor of the breast. [3+3+4]",
+        "topic": "Breast",
+        "year": 2025
+    },
+    {
+        "marks": 10,
+        "month": "December",
+        "paper": 2,
+        "question": "Describe evolving trends to localization of lump in breast surgery. Enumerate the indications of MRI for breast cancer screening as recommended by the American Cancer Society. [6+4]",
+        "topic": "Breast",
+        "year": 2025
+    },
+    {
+        "marks": 10,
+        "month": "December",
+        "paper": 2,
+        "question": "Discuss breast conserving surgery, indications, complications and current status of oncoplastic breast surgery in the management of early breast cancer. [4+2+2+2]",
+        "topic": "Breast",
+        "year": 2025
+    },
+    {
         "marks": 25,
         "month": "June",
         "paper": 3,
@@ -1902,6 +2054,14 @@
         "question": "Briefly discuss D/D in a 50-year-old lady presenting with 4x6 cm firm, mobile mass in right iliac fossa for the last six months. Enumerate relevant investigations and treatment of caecal carcinoma.",
         "topic": "Differential Diagnosis of Mass Abdomen",
         "year": 2019
+    },
+    {
+        "marks": 10,
+        "month": "December",
+        "paper": 3,
+        "question": "Discuss evaluation and management of a 56-year-old lady with anemia and right lower quadrant mass. [10]",
+        "topic": "Differential Diagnosis of Mass Abdomen",
+        "year": 2025
     },
     {
         "marks": null,
@@ -2187,7 +2347,7 @@
         "marks": 10,
         "month": "December",
         "paper": 4,
-        "question": "a) Define 'metabolic surgery' and discuss its physiological basis. b) Risks associated with ‘metabolic surgery' procedures.",
+        "question": "a) Define 'metabolic surgery' and discuss its physiological basis. b) Risks associated with \u2018metabolic surgery' procedures.",
         "topic": "Electrolyte and Nutrition",
         "year": 2017
     },
@@ -2318,6 +2478,22 @@
         "question": "Classify the types of body fluid changes. Describe etiology, clinical manifestation and treatment of hyperkalemia. [2+(2+2+4)]",
         "topic": "Electrolyte and Nutrition",
         "year": 2024
+    },
+    {
+        "marks": 6,
+        "month": "June",
+        "paper": 1,
+        "question": "Describe Parenteral nutrition with respect to its indications, precautions and complications. [6]",
+        "topic": "Electrolyte and Nutrition",
+        "year": 2025
+    },
+    {
+        "marks": 4,
+        "month": "June",
+        "paper": 1,
+        "question": "Create a fluid and nutrition plan for an unconscious 50 kg man on parenteral nutrition. [4]",
+        "topic": "Electrolyte and Nutrition",
+        "year": 2025
     },
     {
         "marks": null,
@@ -2803,7 +2979,7 @@
         "marks": 10,
         "month": "June",
         "paper": 3,
-        "question": "a) Mirizzi's syndrome. b) Choledochal cyst – an overview.",
+        "question": "a) Mirizzi's syndrome. b) Choledochal cyst \u2013 an overview.",
         "topic": "Gallbladder",
         "year": 2019
     },
@@ -2918,6 +3094,22 @@
         "question": "Bail out procedures in laparoscopic cholecystectomy.",
         "topic": "Gallbladder",
         "year": 2024
+    },
+    {
+        "marks": 5,
+        "month": "December",
+        "paper": 3,
+        "question": "Role of laparoscopic CBD exploration in today\u2019s era. [5]",
+        "topic": "Gallbladder",
+        "year": 2025
+    },
+    {
+        "marks": 10,
+        "month": "December",
+        "paper": 3,
+        "question": "Describe the\u00a0causes of post cholecystectomy bilioma. Discuss the diagnosis and management of this condition. [4+6]",
+        "topic": "Gallbladder",
+        "year": 2025
     },
     {
         "marks": 25,
@@ -3118,6 +3310,46 @@
         "question": "Classification of suture materials used in general surgery.",
         "topic": "General Surgery",
         "year": 2024
+    },
+    {
+        "marks": 4,
+        "month": "June",
+        "paper": 1,
+        "question": "What is essential surgery as described by WHO? [4]",
+        "topic": "General Surgery",
+        "year": 2025
+    },
+    {
+        "marks": 6,
+        "month": "June",
+        "paper": 1,
+        "question": "How will you improve access to safe and affordable surgery in a remote district of India? [6]",
+        "topic": "General Surgery",
+        "year": 2025
+    },
+    {
+        "marks": 5,
+        "month": "June",
+        "paper": 1,
+        "question": "How will you evaluate\u00a0a post operative patient following cholecystectomy, with fever on PO Day 4? [5]",
+        "topic": "General Surgery",
+        "year": 2025
+    },
+    {
+        "marks": 5,
+        "month": "December",
+        "paper": 1,
+        "question": "Day care surgery. [5]",
+        "topic": "General Surgery",
+        "year": 2025
+    },
+    {
+        "marks": 10,
+        "month": "December",
+        "paper": 3,
+        "question": "Describe the different types of bariatric surgeries and their indications. Discuss the nutritional issues encountered in the short and long term. [5+5]",
+        "topic": "General Surgery",
+        "year": 2025
     },
     {
         "marks": 5,
@@ -3448,6 +3680,38 @@
         "year": 2024
     },
     {
+        "marks": 10,
+        "month": "June",
+        "paper": 1,
+        "question": "Discuss in brief complications of blood transfusion. Describe special precautions in event of massive blood transfusion. [5+5]",
+        "topic": "Haemorrhage and Blood Transfusion",
+        "year": 2025
+    },
+    {
+        "marks": 5,
+        "month": "December",
+        "paper": 1,
+        "question": "Methods of hemostasis in surgical practice. [5]",
+        "topic": "Haemorrhage and Blood Transfusion",
+        "year": 2025
+    },
+    {
+        "marks": 5,
+        "month": "December",
+        "paper": 1,
+        "question": "Damage control resuscitation. [5]",
+        "topic": "Haemorrhage and Blood Transfusion",
+        "year": 2025
+    },
+    {
+        "marks": 5,
+        "month": "December",
+        "paper": 1,
+        "question": "Classify hemorrhage according to time and source. [5]",
+        "topic": "Haemorrhage and Blood Transfusion",
+        "year": 2025
+    },
+    {
         "marks": null,
         "month": "December",
         "paper": 3,
@@ -3587,7 +3851,7 @@
         "marks": 10,
         "month": "June",
         "paper": 2,
-        "question": "a) Anatomical basis of ‘Carpal Tunnel Syndrome'. b) How would you manage a 40-year-old lady with this problem?",
+        "question": "a) Anatomical basis of \u2018Carpal Tunnel Syndrome'. b) How would you manage a 40-year-old lady with this problem?",
         "topic": "Hand and Foot",
         "year": 2016
     },
@@ -3729,6 +3993,22 @@
     },
     {
         "marks": 5,
+        "month": "June",
+        "paper": 3,
+        "question": "Write a short note on pathophysiology and management of diabetic foot. [2+3]",
+        "topic": "Hand and Foot",
+        "year": 2025
+    },
+    {
+        "marks": 10,
+        "month": "December",
+        "paper": 2,
+        "question": "Discuss the etiology, clinical features and management of carpel tunnel syndrome. [2+3+5]",
+        "topic": "Hand and Foot",
+        "year": 2025
+    },
+    {
+        "marks": 5,
         "month": "December",
         "paper": 1,
         "question": "Paraumblical hernia",
@@ -3851,7 +4131,7 @@
         "marks": 10,
         "month": "June",
         "paper": 3,
-        "question": "a) “Reduction en masse” in inguinal hernia. b) Various repairs for inguinal hernias.",
+        "question": "a) \u201cReduction en masse\u201d in inguinal hernia. b) Various repairs for inguinal hernias.",
         "topic": "Hernia",
         "year": 2015
     },
@@ -3939,7 +4219,7 @@
         "marks": 5,
         "month": "December",
         "paper": 3,
-        "question": "Sportman’s hernia.",
+        "question": "Sportman\u2019s hernia.",
         "topic": "Hernia",
         "year": 2022
     },
@@ -3971,7 +4251,7 @@
         "marks": 5,
         "month": "June",
         "paper": 3,
-        "question": "What do you understand by ‘loss of domain’ with reference to incisional hernia? Describe its management.",
+        "question": "What do you understand by \u2018loss of domain\u2019 with reference to incisional hernia? Describe its management.",
         "topic": "Hernia",
         "year": 2022
     },
@@ -4363,7 +4643,7 @@
         "marks": 10,
         "month": "June",
         "paper": 2,
-        "question": "a) What is ‘Necrotising Fascitis'? b) What are the predisposing factors? c) What are its clinical signs? How would you manage such a case?",
+        "question": "a) What is \u2018Necrotising Fascitis'? b) What are the predisposing factors? c) What are its clinical signs? How would you manage such a case?",
         "topic": "Infectious Diseases",
         "year": 2016
     },
@@ -4491,7 +4771,7 @@
         "marks": 10,
         "month": "October",
         "paper": 1,
-        "question": "A 40-year-old man on treatment for diabetes and hypertension presents to the casualty with progressive redness over the right thigh with pain over the last 3 days... Discuss the differential diagnosis, pathogenesis, investigations, treatment, and complications of the patient’s condition.",
+        "question": "A 40-year-old man on treatment for diabetes and hypertension presents to the casualty with progressive redness over the right thigh with pain over the last 3 days... Discuss the differential diagnosis, pathogenesis, investigations, treatment, and complications of the patient\u2019s condition.",
         "topic": "Infectious Diseases",
         "year": 2023
     },
@@ -4499,7 +4779,7 @@
         "marks": 5,
         "month": "June",
         "paper": 2,
-        "question": "Fournier’s gangrene.",
+        "question": "Fournier\u2019s gangrene.",
         "topic": "Infectious Diseases",
         "year": 2022
     },
@@ -4526,6 +4806,46 @@
         "question": "Enumerate the various surgical complications of leprosy and outline their management.",
         "topic": "Infectious Diseases",
         "year": 2024
+    },
+    {
+        "marks": 5,
+        "month": "June",
+        "paper": 1,
+        "question": "Synergistic gangrene. [5]",
+        "topic": "Infectious Diseases",
+        "year": 2025
+    },
+    {
+        "marks": 5,
+        "month": "June",
+        "paper": 1,
+        "question": "Describe various strategies to reduce surgical site infections. [5]",
+        "topic": "Infectious Diseases",
+        "year": 2025
+    },
+    {
+        "marks": 5,
+        "month": "June",
+        "paper": 2,
+        "question": "Chronic osteomyelitis. [5]",
+        "topic": "Infectious Diseases",
+        "year": 2025
+    },
+    {
+        "marks": 10,
+        "month": "December",
+        "paper": 1,
+        "question": "Discuss the role of antibiotic use in various classes of surgery in reference to type of wound classification. [10]",
+        "topic": "Infectious Diseases",
+        "year": 2025
+    },
+    {
+        "marks": 5,
+        "month": "December",
+        "paper": 2,
+        "question": "Fournier's gangrene. [5]",
+        "topic": "Infectious Diseases",
+        "year": 2025
     },
     {
         "marks": 5,
@@ -4883,7 +5203,7 @@
         "marks": null,
         "month": "June",
         "paper": 2,
-        "question": "Ogilvie’s syndrome.",
+        "question": "Ogilvie\u2019s syndrome.",
         "topic": "Large Intestine",
         "year": 2009
     },
@@ -5147,7 +5467,7 @@
         "marks": null,
         "month": "December",
         "paper": 4,
-        "question": "LFT’s.",
+        "question": "LFT\u2019s.",
         "topic": "Liver",
         "year": 1997
     },
@@ -5451,7 +5771,7 @@
         "marks": 10,
         "month": "June",
         "paper": 3,
-        "question": "a) Initial management and surgical approach in blunt liver trauma. b) Concept of \"Damage control surgery” in liver trauma.",
+        "question": "a) Initial management and surgical approach in blunt liver trauma. b) Concept of \"Damage control surgery\u201d in liver trauma.",
         "topic": "Liver",
         "year": 2015
     },
@@ -5483,7 +5803,7 @@
         "marks": 10,
         "month": "June",
         "paper": 3,
-        "question": "a) Enumerate the ‘Scolicidal agents' used in treatment of hydatid disease. b) How will you manage an 8x8 cm hydatid cyst of (L) lobe of liver in an 18-year-old girl?",
+        "question": "a) Enumerate the \u2018Scolicidal agents' used in treatment of hydatid disease. b) How will you manage an 8x8 cm hydatid cyst of (L) lobe of liver in an 18-year-old girl?",
         "topic": "Liver",
         "year": 2016
     },
@@ -5595,7 +5915,7 @@
         "marks": 5,
         "month": "June",
         "paper": 3,
-        "question": "Methodology and indications of ‘Pringle maneuver'.",
+        "question": "Methodology and indications of \u2018Pringle maneuver'.",
         "topic": "Liver",
         "year": 2022
     },
@@ -5622,6 +5942,22 @@
         "question": "Describe the various minimally invasive treatment modalities for hydatid cysts of the liver.",
         "topic": "Liver",
         "year": 2024
+    },
+    {
+        "marks": 4,
+        "month": "June",
+        "paper": 3,
+        "question": "Enumerate causes of portal hypertension. [4]",
+        "topic": "Liver",
+        "year": 2025
+    },
+    {
+        "marks": 10,
+        "month": "December",
+        "paper": 3,
+        "question": "Briefly describe the life cycle of the hydatid cyst. Discuss the management of a large hydatid cyst of segment 8 of liver. [4+6]",
+        "topic": "Liver",
+        "year": 2025
     },
     {
         "marks": null,
@@ -5886,6 +6222,14 @@
         "question": "Lymphatic drainage of testis.",
         "topic": "Lymphatics",
         "year": 2024
+    },
+    {
+        "marks": 5,
+        "month": "June",
+        "paper": 4,
+        "question": "Cystic hygroma [5]",
+        "topic": "Lymphatics",
+        "year": 2025
     },
     {
         "marks": 5,
@@ -6403,7 +6747,7 @@
         "marks": 3,
         "month": "May",
         "paper": 1,
-        "question": "What is meant by the ‘p' value?",
+        "question": "What is meant by the \u2018p' value?",
         "topic": "Biostatistics",
         "year": 2024
     },
@@ -6422,6 +6766,38 @@
         "question": "What is 'Standard Deviation'?",
         "topic": "Biostatistics",
         "year": 2024
+    },
+    {
+        "marks": 5,
+        "month": "June",
+        "paper": 1,
+        "question": "Level of evidence in research. [5]",
+        "topic": "Biostatistics",
+        "year": 2025
+    },
+    {
+        "marks": 5,
+        "month": "June",
+        "paper": 1,
+        "question": "Randomization. [5]",
+        "topic": "Biostatistics",
+        "year": 2025
+    },
+    {
+        "marks": 5,
+        "month": "June",
+        "paper": 1,
+        "question": "Surgical Audit. [5]",
+        "topic": "Biostatistics",
+        "year": 2025
+    },
+    {
+        "marks": 5,
+        "month": "December",
+        "paper": 1,
+        "question": "Meta-analysis. [5]",
+        "topic": "Biostatistics",
+        "year": 2025
     },
     {
         "marks": 5,
@@ -6747,7 +7123,7 @@
         "marks": 5,
         "month": "December",
         "paper": 2,
-        "question": "Ludwig’s angina.",
+        "question": "Ludwig\u2019s angina.",
         "topic": "Neck",
         "year": 2022
     },
@@ -7184,6 +7560,22 @@
         "year": 2024
     },
     {
+        "marks": 10,
+        "month": "June",
+        "paper": 4,
+        "question": "Classify testicular tumors. Describe management of patient diagnosed with non-seminomatous germ cell tumor. [4+6]",
+        "topic": "Neoplasm",
+        "year": 2025
+    },
+    {
+        "marks": 5,
+        "month": "June",
+        "paper": 4,
+        "question": "Role of RPLND in testicular tumors. [5]",
+        "topic": "Neoplasm",
+        "year": 2025
+    },
+    {
         "marks": null,
         "month": "December",
         "paper": 3,
@@ -7438,6 +7830,22 @@
         "question": "Apnea test to diagnose brain death. [5]",
         "topic": "Neurosurgery",
         "year": 2024
+    },
+    {
+        "marks": 10,
+        "month": "December",
+        "paper": 2,
+        "question": "Enumerate the causes of hydrocephalus. Briefly discuss the management of cervical meningocele with hydrocephalus. [3+7]",
+        "topic": "Neurosurgery",
+        "year": 2025
+    },
+    {
+        "marks": 5,
+        "month": "December",
+        "paper": 2,
+        "question": "Functional neurosurgery. [5]",
+        "topic": "Neurosurgery",
+        "year": 2025
     },
     {
         "marks": 25,
@@ -7715,7 +8123,7 @@
         "marks": 10,
         "month": "December",
         "paper": 3,
-        "question": "Achalasia cardía: a) Clinical features. b) Diagnostic investigations. c) Principles of medical and surgical management.",
+        "question": "Achalasia card\u00eda: a) Clinical features. b) Diagnostic investigations. c) Principles of medical and surgical management.",
         "topic": "Oesophagus",
         "year": 2016
     },
@@ -7835,7 +8243,7 @@
         "marks": 10,
         "month": "October",
         "paper": 3,
-        "question": "Management of Barrett’s esophagus. Types of gastric resections.",
+        "question": "Management of Barrett\u2019s esophagus. Types of gastric resections.",
         "topic": "Oesophagus",
         "year": 2023
     },
@@ -7862,6 +8270,30 @@
         "question": "Classification of tracheo-oesophageal fistula.",
         "topic": "Oesophagus",
         "year": 2024
+    },
+    {
+        "marks": 6,
+        "month": "June",
+        "paper": 3,
+        "question": "Describe the management options for a patient with esophageal varices. [6]",
+        "topic": "Oesophagus",
+        "year": 2025
+    },
+    {
+        "marks": 5,
+        "month": "December",
+        "paper": 3,
+        "question": "Scoring systems for GERD. [5]",
+        "topic": "Oesophagus",
+        "year": 2025
+    },
+    {
+        "marks": 5,
+        "month": "December",
+        "paper": 3,
+        "question": "Complications of laparoscopic anti-reflux surgery. [5]",
+        "topic": "Oesophagus",
+        "year": 2025
     },
     {
         "marks": null,
@@ -8561,6 +8993,110 @@
     },
     {
         "marks": 5,
+        "month": "June",
+        "paper": 1,
+        "question": "Describe in detail about the surgical hand washing technique. [5]",
+        "topic": "Operative Procedures",
+        "year": 2025
+    },
+    {
+        "marks": 5,
+        "month": "June",
+        "paper": 1,
+        "question": "WHO surgical check list. [5]",
+        "topic": "Operative Procedures",
+        "year": 2025
+    },
+    {
+        "marks": 5,
+        "month": "June",
+        "paper": 1,
+        "question": "Radiation safety for surgeons. [5]",
+        "topic": "Operative Procedures",
+        "year": 2025
+    },
+    {
+        "marks": 5,
+        "month": "June",
+        "paper": 3,
+        "question": "Diagnostic laparoscopy in emergency surgery. [5]",
+        "topic": "Operative Procedures",
+        "year": 2025
+    },
+    {
+        "marks": 5,
+        "month": "June",
+        "paper": 4,
+        "question": "Discuss the common uses of LASER in surgery. [5]",
+        "topic": "Operative Procedures",
+        "year": 2025
+    },
+    {
+        "marks": 5,
+        "month": "December",
+        "paper": 1,
+        "question": "Principles of electrosurgery. [5]",
+        "topic": "Operative Procedures",
+        "year": 2025
+    },
+    {
+        "marks": 10,
+        "month": "December",
+        "paper": 1,
+        "question": "Discuss various methods of sterilization in surgical practice. [10]",
+        "topic": "Operative Procedures",
+        "year": 2025
+    },
+    {
+        "marks": 5,
+        "month": "December",
+        "paper": 1,
+        "question": "Types and indications of surgical drains. [5]",
+        "topic": "Operative Procedures",
+        "year": 2025
+    },
+    {
+        "marks": 5,
+        "month": "December",
+        "paper": 1,
+        "question": "Describe the various types of extra-corporeal knots used in laparoscopic surgery using suitable illustrations. [5]",
+        "topic": "Operative Procedures",
+        "year": 2025
+    },
+    {
+        "marks": 5,
+        "month": "December",
+        "paper": 1,
+        "question": "Describe the importance of ergonomics in laparoscopic surgery. [5]",
+        "topic": "Operative Procedures",
+        "year": 2025
+    },
+    {
+        "marks": 5,
+        "month": "December",
+        "paper": 4,
+        "question": "Ilio-inguinal block dissection. [5]",
+        "topic": "Operative Procedures",
+        "year": 2025
+    },
+    {
+        "marks": 5,
+        "month": "December",
+        "paper": 4,
+        "question": "Advances in robotic surgical systems. [5]",
+        "topic": "Operative Procedures",
+        "year": 2025
+    },
+    {
+        "marks": 5,
+        "month": "December",
+        "paper": 4,
+        "question": "How to create pneumoperitoneum in scarred abdomen? [5]",
+        "topic": "Operative Procedures",
+        "year": 2025
+    },
+    {
+        "marks": 5,
         "month": "December",
         "paper": 1,
         "question": "Adamantinoma",
@@ -8643,7 +9179,7 @@
         "marks": 10,
         "month": "December",
         "paper": 1,
-        "question": "Describe TNM staging of oral cancers. How would you manage a 40 years old smoker with T₁N₁Mx carcinoma of lateral border of tongue?",
+        "question": "Describe TNM staging of oral cancers. How would you manage a 40 years old smoker with T\u2081N\u2081Mx carcinoma of lateral border of tongue?",
         "topic": "Oral Cavity",
         "year": 2011
     },
@@ -8830,6 +9366,14 @@
         "question": "Step up approach to pain management.",
         "topic": "Pain",
         "year": 2022
+    },
+    {
+        "marks": 5,
+        "month": "December",
+        "paper": 1,
+        "question": "Step-up approach to pain management in surgical patient. [5]",
+        "topic": "Pain",
+        "year": 2025
     },
     {
         "marks": 5,
@@ -9131,7 +9675,7 @@
         "marks": 10,
         "month": "December",
         "paper": 3,
-        "question": "a) Causes of acute pancreatitis b) Modified Atlanta Classification for severity of acute pancreatitis. c) Principles of management of ‘pseudo pancreatic cyst'",
+        "question": "a) Causes of acute pancreatitis b) Modified Atlanta Classification for severity of acute pancreatitis. c) Principles of management of \u2018pseudo pancreatic cyst'",
         "topic": "Pancreas",
         "year": 2017
     },
@@ -9443,7 +9987,7 @@
         "marks": 10,
         "month": "June",
         "paper": 2,
-        "question": "a) What are “Incidentalomas”? b) Management of incidentaloma of adrenal gland.",
+        "question": "a) What are \u201cIncidentalomas\u201d? b) Management of incidentaloma of adrenal gland.",
         "topic": "Parathyroids and Adrenals",
         "year": 2015
     },
@@ -9641,6 +10185,38 @@
     },
     {
         "marks": 5,
+        "month": "June",
+        "paper": 2,
+        "question": "Hyperparathyroidism. [5]",
+        "topic": "Parathyroids and Adrenals",
+        "year": 2025
+    },
+    {
+        "marks": 5,
+        "month": "June",
+        "paper": 2,
+        "question": "MEN syndrome. [5]",
+        "topic": "Parathyroids and Adrenals",
+        "year": 2025
+    },
+    {
+        "marks": 10,
+        "month": "June",
+        "paper": 2,
+        "question": "Classify adrenal tumors. Outline the management of incidentally detected tumor in adrenal gland. [4+6]",
+        "topic": "Parathyroids and Adrenals",
+        "year": 2025
+    },
+    {
+        "marks": 10,
+        "month": "December",
+        "paper": 2,
+        "question": "Classify the adrenal tumors and discuss the management of pheochromocytoma. [3+7]",
+        "topic": "Parathyroids and Adrenals",
+        "year": 2025
+    },
+    {
+        "marks": 5,
         "month": "December",
         "paper": 1,
         "question": "Secondary nerve repair",
@@ -9718,6 +10294,14 @@
         "question": "Mention indications, steps and complications of lumbar sympathectomy.",
         "topic": "Peripheral Nerves",
         "year": 2022
+    },
+    {
+        "marks": 5,
+        "month": "June",
+        "paper": 2,
+        "question": "Bell's palsy. [5]",
+        "topic": "Peripheral Nerves",
+        "year": 2025
     },
     {
         "marks": 5,
@@ -10134,6 +10718,30 @@
         "question": "Differentiate between partial thickness and full thickness skin grafts.",
         "topic": "Reconstruction",
         "year": 2024
+    },
+    {
+        "marks": 5,
+        "month": "June",
+        "paper": 2,
+        "question": "Describe commonly used flaps in cases of oral malignancy. [5]",
+        "topic": "Reconstruction",
+        "year": 2025
+    },
+    {
+        "marks": 10,
+        "month": "December",
+        "paper": 4,
+        "question": "What are the various ways to resurface a wound? Discuss how will you raise split thickness skin graft. What are the causes of failure of such a graft? [3+4+3]",
+        "topic": "Reconstruction",
+        "year": 2025
+    },
+    {
+        "marks": 5,
+        "month": "December",
+        "paper": 4,
+        "question": "Describe various bio-engineered skin substitutes and their current status in patient care. [5]",
+        "topic": "Reconstruction",
+        "year": 2025
     },
     {
         "marks": null,
@@ -10640,6 +11248,62 @@
         "year": 2024
     },
     {
+        "marks": 2,
+        "month": "June",
+        "paper": 3,
+        "question": "Classify perianal fistula. [2]",
+        "topic": "Rectum and Anal Canal",
+        "year": 2025
+    },
+    {
+        "marks": 3,
+        "month": "June",
+        "paper": 3,
+        "question": "What is Goodsall\u2019s rule in reference to perianal fistula? [3]",
+        "topic": "Rectum and Anal Canal",
+        "year": 2025
+    },
+    {
+        "marks": 5,
+        "month": "June",
+        "paper": 3,
+        "question": "Enumerate surgical options for management of perianal fistula.\u00a0[5]",
+        "topic": "Rectum and Anal Canal",
+        "year": 2025
+    },
+    {
+        "marks": 5,
+        "month": "June",
+        "paper": 3,
+        "question": "Describe COLOR 3 trial for colorectal cancer. [5]",
+        "topic": "Rectum and Anal Canal",
+        "year": 2025
+    },
+    {
+        "marks": 5,
+        "month": "June",
+        "paper": 3,
+        "question": "Discuss in brief about total mesorectal excision. [5]",
+        "topic": "Rectum and Anal Canal",
+        "year": 2025
+    },
+    {
+        "marks": 5,
+        "month": "December",
+        "paper": 3,
+        "question": "Minimally invasive options in fistula-in-ano management. [5]",
+        "topic": "Rectum and Anal Canal",
+        "year": 2025
+    },
+    {
+        "marks": 10,
+        "month": "December",
+        "paper": 3,
+        "question": "Describe various minimally invasive options for management of rectal cancer. [10]",
+        "topic": "Rectum and Anal Canal",
+        "year": 2025
+    },
+    {
         "marks": null,
         "month": "June",
         "paper": 1,
@@ -10667,7 +11331,7 @@
         "marks": 10,
         "month": "October",
         "paper": 4,
-        "question": "‘Salvage’ retroperitoneal lymph node dissection. Minimally invasive parathyroid surgery.",
+        "question": "\u2018Salvage\u2019 retroperitoneal lymph node dissection. Minimally invasive parathyroid surgery.",
         "topic": "Retroperitoneal Space",
         "year": 2023
     },
@@ -10910,6 +11574,14 @@
         "question": "Discuss the surgical anatomy of parotid gland.",
         "topic": "Salivary Glands",
         "year": 2024
+    },
+    {
+        "marks": 5,
+        "month": "June",
+        "paper": 2,
+        "question": "Warthin's tumor.\u00a0[5]",
+        "topic": "Salivary Glands",
+        "year": 2025
     },
     {
         "marks": 25,
@@ -11203,7 +11875,7 @@
         "marks": 10,
         "month": "June",
         "paper": 2,
-        "question": "a) What is pilonidal sinus? b) Management of a “recurring pilonidal sinus” in a 60 year old diabetic gentleman.",
+        "question": "a) What is pilonidal sinus? b) Management of a \u201crecurring pilonidal sinus\u201d in a 60 year old diabetic gentleman.",
         "topic": "Sinus and Fistula",
         "year": 2015
     },
@@ -11211,7 +11883,7 @@
         "marks": 10,
         "month": "June",
         "paper": 3,
-        "question": "a) Classification and clinical assessment of fistula-in-ano. b) Role of 'Seton' and ‘VAAFT surgery' in fistula-in-ano.",
+        "question": "a) Classification and clinical assessment of fistula-in-ano. b) Role of 'Seton' and \u2018VAAFT surgery' in fistula-in-ano.",
         "topic": "Sinus and Fistula",
         "year": 2019
     },
@@ -11227,7 +11899,7 @@
         "marks": 10,
         "month": "June",
         "paper": 3,
-        "question": "Park’s classification for fistula-in-ano. [5] Laparoscopic management of CBD stones. [5]",
+        "question": "Park\u2019s classification for fistula-in-ano. [5] Laparoscopic management of CBD stones. [5]",
         "topic": "Sinus and Fistula",
         "year": 2021
     },
@@ -11491,7 +12163,7 @@
         "marks": 5,
         "month": "December",
         "paper": 2,
-        "question": "Kaposi’s sarcoma.",
+        "question": "Kaposi\u2019s sarcoma.",
         "topic": "Skin Tumours",
         "year": 2022
     },
@@ -11582,6 +12254,14 @@
         "question": "Marjolin's ulcer.",
         "topic": "Skin Tumours",
         "year": 2024
+    },
+    {
+        "marks": 5,
+        "month": "June",
+        "paper": 2,
+        "question": "Classification of malignant melanoma. [5]",
+        "topic": "Skin Tumours",
+        "year": 2025
     },
     {
         "marks": 5,
@@ -12546,6 +13226,22 @@
     {
         "marks": 5,
         "month": "June",
+        "paper": 3,
+        "question": "Describe the different types of operations in gastric cancer. [5]",
+        "topic": "Stomach",
+        "year": 2025
+    },
+    {
+        "marks": 5,
+        "month": "June",
+        "paper": 3,
+        "question": "Enumerate and briefly describe 5 complications specific to gastrectomy. [5]",
+        "topic": "Stomach",
+        "year": 2025
+    },
+    {
+        "marks": 5,
+        "month": "June",
         "paper": 1,
         "question": "Encysted hydrocoele of the cord.",
         "topic": "Hernia",
@@ -12558,6 +13254,30 @@
         "question": "Haematocoele",
         "topic": "Hernia",
         "year": 2001
+    },
+    {
+        "marks": 4,
+        "month": "June",
+        "paper": 3,
+        "question": "Discuss the clinical presentations in a patient with\u00a0femoral hernia. [4]",
+        "topic": "Hernia",
+        "year": 2025
+    },
+    {
+        "marks": 6,
+        "month": "June",
+        "paper": 3,
+        "question": "Describe common operations performed for its treatment. [6]",
+        "topic": "Hernia",
+        "year": 2025
+    },
+    {
+        "marks": 10,
+        "month": "December",
+        "paper": 2,
+        "question": "What do you understand by \u2018Loss of domain\u2019 in reference to incisional hernia? Describe the different surgical options including recent advances. [3+7]",
+        "topic": "Hernia",
+        "year": 2025
     },
     {
         "marks": null,
@@ -12576,6 +13296,30 @@
         "year": 2019
     },
     {
+        "marks": 5,
+        "month": "December",
+        "paper": 1,
+        "question": "Informed consent. [5]",
+        "topic": "Miscellaneous",
+        "year": 2025
+    },
+    {
+        "marks": 5,
+        "month": "December",
+        "paper": 4,
+        "question": "Use of three-dimensional printing in surgery. [5]",
+        "topic": "Miscellaneous",
+        "year": 2025
+    },
+    {
+        "marks": 5,
+        "month": "December",
+        "paper": 4,
+        "question": "Role of artificial inteligence in preoperative, intraoperative and postoperative patient. [5]",
+        "topic": "Miscellaneous",
+        "year": 2025
+    },
+    {
         "marks": 10,
         "month": "October",
         "paper": 4,
@@ -12590,6 +13334,22 @@
         "question": "Cystic hygroma. [5]",
         "topic": "Neck",
         "year": 2024
+    },
+    {
+        "marks": 10,
+        "month": "June",
+        "paper": 2,
+        "question": "Describe the various types of neck dissections. Outline a workup and management plan of a 45-year-old man with solitary neck node with unknown primary. [5+5]",
+        "topic": "Neck",
+        "year": 2025
+    },
+    {
+        "marks": 10,
+        "month": "December",
+        "paper": 2,
+        "question": "Describe indications, steps and complications of modified radical neck dissection. [3+4+3]",
+        "topic": "Neck",
+        "year": 2025
     },
     {
         "marks": 5,
@@ -13057,6 +13817,30 @@
     },
     {
         "marks": 5,
+        "month": "June",
+        "paper": 3,
+        "question": "Indications and complications of chest tube insertion. [5]",
+        "topic": "Thorax",
+        "year": 2025
+    },
+    {
+        "marks": 5,
+        "month": "June",
+        "paper": 3,
+        "question": "Eventration of diaphragm. [5]",
+        "topic": "Thorax",
+        "year": 2025
+    },
+    {
+        "marks": 5,
+        "month": "December",
+        "paper": 2,
+        "question": "Pectus excavatum. [5]",
+        "topic": "Thorax",
+        "year": 2025
+    },
+    {
+        "marks": 5,
         "month": "December",
         "paper": 2,
         "question": "Post operative complications of thyroidectomy",
@@ -13075,7 +13859,7 @@
         "marks": null,
         "month": "June",
         "paper": 3,
-        "question": "Hashimoto’s thyroiditis.",
+        "question": "Hashimoto\u2019s thyroiditis.",
         "topic": "Thyroid",
         "year": 1997
     },
@@ -13163,7 +13947,7 @@
         "marks": 5,
         "month": "June",
         "paper": 2,
-        "question": "Occular manifestations of Grave’s disease",
+        "question": "Occular manifestations of Grave\u2019s disease",
         "topic": "Thyroid",
         "year": 1999
     },
@@ -13600,6 +14384,14 @@
         "year": 2024
     },
     {
+        "marks": 10,
+        "month": "June",
+        "paper": 2,
+        "question": "Describe the\u00a0types of operations performed\u00a0on the thyroid gland. Discuss complications after thyroidectomy. [5+5]",
+        "topic": "Thyroid",
+        "year": 2025
+    },
+    {
         "marks": 5,
         "month": "December",
         "paper": 1,
@@ -13771,7 +14563,7 @@
         "marks": 10,
         "month": "December",
         "paper": 4,
-        "question": "a) Types of 'graft rejection' after organ transplantation b) Classification of ‘immunosuppressive' agents in organ transplantation c) Clinical testing of brain stem function as relevant for organ donation.",
+        "question": "a) Types of 'graft rejection' after organ transplantation b) Classification of \u2018immunosuppressive' agents in organ transplantation c) Clinical testing of brain stem function as relevant for organ donation.",
         "topic": "Transplantation",
         "year": 2017
     },
@@ -13899,7 +14691,7 @@
         "marks": 5,
         "month": "June",
         "paper": 1,
-        "question": "Criteria for declaring ‘brain stem death’ in relation to organ donation.",
+        "question": "Criteria for declaring \u2018brain stem death\u2019 in relation to organ donation.",
         "topic": "Transplantation",
         "year": 2022
     },
@@ -13934,6 +14726,22 @@
         "question": "Graft versus Host disease.",
         "topic": "Transplantation",
         "year": 2024
+    },
+    {
+        "marks": 5,
+        "month": "December",
+        "paper": 4,
+        "question": "Discuss indications and contraindications of heart transplantation. [5]",
+        "topic": "Transplantation",
+        "year": 2025
+    },
+    {
+        "marks": 5,
+        "month": "December",
+        "paper": 4,
+        "question": "Describe current status of Islet (pancreatic) transplantation in management of diabetes mellitus. [5]",
+        "topic": "Transplantation",
+        "year": 2025
     },
     {
         "marks": null,
@@ -14542,6 +15350,78 @@
         "question": "Write short note on malunion.",
         "topic": "Trauma",
         "year": 2024
+    },
+    {
+        "marks": 5,
+        "month": "June",
+        "paper": 1,
+        "question": "Trauma severity scores. [5]",
+        "topic": "Trauma",
+        "year": 2025
+    },
+    {
+        "marks": 5,
+        "month": "June",
+        "paper": 1,
+        "question": "Extended FAST in trauma management. [5]",
+        "topic": "Trauma",
+        "year": 2025
+    },
+    {
+        "marks": 5,
+        "month": "June",
+        "paper": 1,
+        "question": "Triage. [5]",
+        "topic": "Trauma",
+        "year": 2025
+    },
+    {
+        "marks": 5,
+        "month": "June",
+        "paper": 1,
+        "question": "Disaster management plan at institution level. [5]",
+        "topic": "Trauma",
+        "year": 2025
+    },
+    {
+        "marks": 5,
+        "month": "June",
+        "paper": 3,
+        "question": "Compartment syndrome. [5]",
+        "topic": "Trauma",
+        "year": 2025
+    },
+    {
+        "marks": 5,
+        "month": "December",
+        "paper": 1,
+        "question": "Describe the principles of limb salvage in extremity trauma. [5]",
+        "topic": "Trauma",
+        "year": 2025
+    },
+    {
+        "marks": 5,
+        "month": "December",
+        "paper": 1,
+        "question": "Discuss crush syndrome and its management. [5]",
+        "topic": "Trauma",
+        "year": 2025
+    },
+    {
+        "marks": 5,
+        "month": "December",
+        "paper": 2,
+        "question": "Pathophysiology and management of black eye. [5]",
+        "topic": "Trauma",
+        "year": 2025
+    },
+    {
+        "marks": 10,
+        "month": "December",
+        "paper": 3,
+        "question": "Outline the management protocol of a case of blunt trauma abdomen following vehicle accident with special reference to eFAST and primary survey. [10]",
+        "topic": "Trauma",
+        "year": 2025
     },
     {
         "marks": null,
@@ -16370,6 +17250,94 @@
     {
         "marks": 5,
         "month": "June",
+        "paper": 4,
+        "question": "TNM staging of carcinoma penis. [5]",
+        "topic": "Urology",
+        "year": 2025
+    },
+    {
+        "marks": 5,
+        "month": "June",
+        "paper": 4,
+        "question": "Management of urethral stricture. [5]",
+        "topic": "Urology",
+        "year": 2025
+    },
+    {
+        "marks": 5,
+        "month": "June",
+        "paper": 4,
+        "question": "ESWL for renal calculus. [5]",
+        "topic": "Urology",
+        "year": 2025
+    },
+    {
+        "marks": 5,
+        "month": "June",
+        "paper": 4,
+        "question": "Management of 22-year-old girl with PUJ obstruction. [5]",
+        "topic": "Urology",
+        "year": 2025
+    },
+    {
+        "marks": 10,
+        "month": "June",
+        "paper": 4,
+        "question": "Enumerate indications of TUR-BT for carcinoma of\u00a0urinary bladder. Describe strategies for urinary conduits after radical cystectomy. [4+6]",
+        "topic": "Urology",
+        "year": 2025
+    },
+    {
+        "marks": 10,
+        "month": "June",
+        "paper": 4,
+        "question": "Discuss the various treatment options for management of benign prostate hyperplasia. Discuss the complications after surgical prostatectomy. [5+5]",
+        "topic": "Urology",
+        "year": 2025
+    },
+    {
+        "marks": 10,
+        "month": "June",
+        "paper": 4,
+        "question": "Enumerate causes of hematuria. Discuss the investigations and management of a 40-year-old man with gross hematuria. [5+5]",
+        "topic": "Urology",
+        "year": 2025
+    },
+    {
+        "marks": 10,
+        "month": "June",
+        "paper": 4,
+        "question": "Classify types of hypospadias. Discuss various management options for hypospadias. [4+6]",
+        "topic": "Urology",
+        "year": 2025
+    },
+    {
+        "marks": 5,
+        "month": "June",
+        "paper": 4,
+        "question": "Testicular torsion. [5]",
+        "topic": "Urology",
+        "year": 2025
+    },
+    {
+        "marks": 10,
+        "month": "December",
+        "paper": 4,
+        "question": "Enlist common causes of male infertility. Describe evaluation and management of such a case. [3+7]",
+        "topic": "Urology",
+        "year": 2025
+    },
+    {
+        "marks": 5,
+        "month": "December",
+        "paper": 4,
+        "question": "Recent advances in prostatic surgery. [5]",
+        "topic": "Urology",
+        "year": 2025
+    },
+    {
+        "marks": 5,
+        "month": "June",
         "paper": 3,
         "question": "Hemangioma",
         "topic": "Vascular Lesions",
@@ -16494,6 +17462,14 @@
         "question": "Arterio-venous fistula.",
         "topic": "Vascular Lesions",
         "year": 2022
+    },
+    {
+        "marks": 5,
+        "month": "December",
+        "paper": 3,
+        "question": "Therapeutic embolization. [5]",
+        "topic": "Vascular Lesions",
+        "year": 2025
     },
     {
         "marks": 5,
@@ -16832,6 +17808,30 @@
         "year": 2024
     },
     {
+        "marks": 5,
+        "month": "June",
+        "paper": 3,
+        "question": "Describe the venous anatomy of the lower limb with diagram. [5]",
+        "topic": "Venous Diseases",
+        "year": 2025
+    },
+    {
+        "marks": 5,
+        "month": "June",
+        "paper": 3,
+        "question": "Describe pathophysiology and clinical features of varicose veins. [5]",
+        "topic": "Venous Diseases",
+        "year": 2025
+    },
+    {
+        "marks": 5,
+        "month": "December",
+        "paper": 3,
+        "question": "Newer technique in varicose vein surgery. [5]",
+        "topic": "Venous Diseases",
+        "year": 2025
+    },
+    {
         "marks": null,
         "month": "June",
         "paper": 1,
@@ -17115,7 +18115,7 @@
         "marks": 10,
         "month": "December",
         "paper": 1,
-        "question": "What is `Biofilm’ and how does it influence healing of chronic wounds? [5] How will you diagnose and evaluate a patient with non healing ulcer of foot? [5]",
+        "question": "What is `Biofilm\u2019 and how does it influence healing of chronic wounds? [5] How will you diagnose and evaluate a patient with non healing ulcer of foot? [5]",
         "topic": "Wounds and Wound Healing",
         "year": 2021
     },
@@ -17222,5 +18222,53 @@
         "question": "CDC classification of wounds.",
         "topic": "Wounds and Wound Healing",
         "year": 2024
+    },
+    {
+        "marks": 5,
+        "month": "June",
+        "paper": 1,
+        "question": "How will you differentiate keloid from hypertrophic scar? [5]",
+        "topic": "Wounds and Wound Healing",
+        "year": 2025
+    },
+    {
+        "marks": 5,
+        "month": "June",
+        "paper": 3,
+        "question": "Describe the factors that are responsible for post-operative wound dehiscence following midline laparotomy. [5]",
+        "topic": "Wounds and Wound Healing",
+        "year": 2025
+    },
+    {
+        "marks": 5,
+        "month": "June",
+        "paper": 3,
+        "question": "Discuss the options for management of patient\u00a0with wound dehiscence. [5]",
+        "topic": "Wounds and Wound Healing",
+        "year": 2025
+    },
+    {
+        "marks": 5,
+        "month": "June",
+        "paper": 4,
+        "question": "Negative pressure wound therapy for wound management. [5]",
+        "topic": "Wounds and Wound Healing",
+        "year": 2025
+    },
+    {
+        "marks": 5,
+        "month": "December",
+        "paper": 1,
+        "question": "Hyperbaric oxygen therapy. [5]",
+        "topic": "Wounds and Wound Healing",
+        "year": 2025
+    },
+    {
+        "marks": 5,
+        "month": "December",
+        "paper": 4,
+        "question": "Barbed suture. [5]",
+        "topic": "Wounds and Wound Healing",
+        "year": 2025
     }
 ]
